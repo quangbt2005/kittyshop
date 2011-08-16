@@ -19,7 +19,6 @@ ul.categories li a
   text-decoration:none;
 }
 ul.categories li a:hover{color: red;}
-a.saleofflink:hover{color: yellow;}
 
 #allheader{
 	clear: both;
@@ -31,7 +30,7 @@ a.saleofflink:hover{color: yellow;}
 #allright{float: left;width: 200px;margin: 5 0 5 5;}
 #allfooter{clear: both;width:960px;}
 
-#marquee_wrapper{position: relative;left: 0px;}
+#marquee_wrapper{position: relative;left: 0px;top: 10px;}
 .navigation2_icon
 {
   float: left;
@@ -40,7 +39,7 @@ a.saleofflink:hover{color: yellow;}
   text-align: right;
   background-color: transparent;
   width: 100%;
-  top: -20px;
+  top: -10px;
   height: 25px;
 }
 
@@ -67,13 +66,23 @@ ul.headerNavigation li{display: inline;}
 ul.headerNavigation li a{padding: 10 20;text-decoration: none;color: white;}
 ul.headerNavigation li a:hover{color: yellow;text-decoration: none;}
 
-div.side_container
+div.fix_height_container
 {
-  width: 198px;
-  text-align: left;
-  background-color: #EDF2FC;
+  width: 148px;
+  height: 200px;
+  text-align: center;
+  /*background-color: #ffffff;
+  border: 1px solid #CCCCCC;*/
+  padding: 0 5px;
+  /*background-color: #EDF2FC;
   border-top: 1px solid #7DCCFF;
-  border-bottom: 1px solid #7DCCFF;
+  border-bottom: 1px solid #7DCCFF;*/
+}
+div.saleoffimg{
+	width: 120px;
+	height: 120px;
+	background-color: #ffffff;
+	border: 1px solid #afb51a;
 }
 div.container{padding: 0px;background-color: #EDF2FC;border: 1px solid #7DCCFF;}
 .product
@@ -154,7 +163,6 @@ a.news2{font:bold 15px/20px Arial;color:red;}
 .href_h_5:hover img{background:url("/images/HEADER_BUTTONS.png") no-repeat scroll 0 -402px transparent;}
 td {
     padding: 0;
-    vertical-align: top;
 }
 .tall-t{background: url("/images/tall-t.gif") repeat-x scroll center top transparent;}
 .tall-b{background: url("/images/tall-b.gif") repeat-x scroll center bottom transparent;}
@@ -165,11 +173,29 @@ td {
 .tall-r2{background: url("/images/tall-r2.gif") repeat-y scroll right center transparent;}
 .tall-l3{background: url("/images/tall-l3.gif") repeat-y scroll left center transparent;}
 .tall-r3{background: url("/images/tall-r3.gif") repeat-y scroll right center transparent;}
+.tall-l4{background: url("/images/tall-l5.gif") repeat-y scroll left center transparent;}
+.tall-r4{background: url("/images/tall-r5.gif") repeat-y scroll right center transparent;}
 .tall-b3{background: url("/images/tall-b3.gif") repeat-x scroll center bottom transparent;}
+.tall-b4{background: url("/images/tall-b5.gif") repeat-x scroll center bottom transparent;}
+.tall-b6{background: url("/images/tall-b6.gif") repeat-x scroll center bottom transparent;}
+.tall-m6{background-color: #ffdf08}
+.tall-m4{background-color: #f0f0f0}
+
+.k-t6-heading{background: url("/images/k-tm6.png") repeat-x scroll center top #E1E92C;}
+.k-t4-heading{background: url("/images/k-tm4.png") repeat-x scroll center top #E1E92C;}
+.tall-l6{background: url("/images/tall-l6.gif") repeat-y scroll left center transparent;}
+.tall-r6{background: url("/images/tall-r6.gif") repeat-y scroll right center transparent;}
+.k-tl6{background: url("/images/k-tl6.png") no-repeat scroll left center transparent;}
+.k-tr6{background: url("/images/k-tr6.gif") repeat-y scroll right center transparent;}
+.k-tl4{background: url("/images/k-tl5.png") no-repeat scroll left center transparent;}
+.k-tr4{background: url("/images/k-tr5.gif") no-repeat scroll right center transparent;}
+.k-bl4{background: url("/images/k-bl5.png") no-repeat scroll left center transparent;}
+.k-br4{background: url("/images/k-br5.gif") no-repeat scroll right center transparent;}
+
 .bsl_heading{background: url("/images/tall-t3.gif") repeat-x scroll center top #E1E92C;margin-top: 30px}
 .bsl_left{background: url("/images/k-tl3.gif") no-repeat scroll left top transparent;}
 .bsl_right{background: url("/images/k-tr3.gif") no-repeat scroll right top transparent;}
-.heading_text_1,heading_text_2{
+.heading_text_1{
 	color: #010101;
     font-size: 12px;
     font-weight: bold;
@@ -180,6 +206,18 @@ td {
     font-size: 12px;
     font-weight: bold;
     padding: 19px 20px 12px;
+}
+.heading_text_3{
+	color: #010101;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 19px 5px 12px;
+}
+.heading_text_4{
+	color: #010101;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 19px 5px 12px;
 }
 .ul_1 {
     list-style: none outside none;
@@ -362,7 +400,8 @@ table.register td{padding: 5px;text-align: left;}
 .cursorDefault { cursor:default !important; }
 .cursorMove { cursor:move !important; }
 .cursorPointer { cursor:pointer !important; }
-a.saleofflink{text-decoration: none;color:#333399;}
+a.saleofflink{text-decoration: none;color:#010101;}
+a.saleofflink:hover{color:#f06a19;}
 /* --------------------------------------------------------------------------------------------- */
 /* BACKGROUND
 /* --------------------------------------------------------------------------------------------- */
