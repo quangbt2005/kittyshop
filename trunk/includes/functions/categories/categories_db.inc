@@ -99,7 +99,7 @@ function List_Category($parent='0')
   $SQL .= " ORDER BY sort_order ASC ";
 //e($SQL);
   $List = P_MySQL_Real_SELECT_GetArrayIndex( $SQL );
-
+//pd($List);
   if( empty( $List[0] ) == FALSE )
   {
     return $List;
