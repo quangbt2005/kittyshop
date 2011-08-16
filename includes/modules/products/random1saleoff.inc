@@ -10,10 +10,10 @@ $saleoffProduct = LoadRandom1SaleOffProducts();
 $html = '';
 if(!empty($saleoffProduct))
 {
-  $html = '<a href="/sanpham/' . $saleoffProduct['products_id'] . '/chitiet">'
+  $html = '<div class="saleoffimg"><a href="/sanpham/' . $saleoffProduct['products_id'] . '/chitiet">'
 	      . '<img border="0" title="' . $saleoffProduct['products_name'] . '" alt="'
         . $saleoffProduct['products_name'] . '" src="/product_thumb.php?f='
-        . $saleoffProduct['products_image'] . '&w=auto&h=80&ma=500"></a>';
+        . $saleoffProduct['products_image'] . '&w=auto&h=80&ma=114&cx=120&cy=120"></a></div>';
 
   $html .= '<br><a href="/sanpham/' . $saleoffProduct['products_id'] . '/detail">'
           .'<span class="f9">' . $saleoffProduct['products_name'] . '</span></a>';

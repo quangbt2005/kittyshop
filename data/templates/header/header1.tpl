@@ -14,3 +14,21 @@
 		</table></td>
 	</tr>
 </table>
+<table width="100%" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+			<div id="marquee_wrapper">
+      			<marquee><strong><font size="3" color="#FF00FF">Hàng hi&#7879;u &#273;&#7865;p, ch&#7845;t l&#432;&#7907;ng. Giá h&#7907;p lý. </font> <font size="3" color="#008080">Giao hàng t&#7853;n n&#417;i.  V&#7851;n &#273;ang update s&#7843;n ph&#7849;m hàng ngày.</font></strong></marquee>
+    		</div>
+
+			<div class="navigation2_icon">
+	      		{if $smarty.session.logon.id != ''}
+				<a href="/dangxuat" class="headerNavigation2" style="background-image: url(/images/logoff_30x30.gif);">Thoát</a>&nbsp;&nbsp;
+				{/if}
+				<a href="/taikhoan" class="headerNavigation2" style="background-image: url(/images/header_account.gif);">Tài khoản</a>&nbsp;&nbsp;
+				<a href="/giohang/xem" class="headerNavigation2" style="background-image: url(/images/header_cart.gif);">Giỏ hàng</a> &nbsp;&nbsp;
+				<a href="/thanhtoan" class="headerNavigation2" style="background-image: url(/images/header_checkout.gif);">Thanh Toán</a>
+			</div>
+		</td>
+	</tr>
+</table>
