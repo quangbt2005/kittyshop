@@ -18,7 +18,7 @@
 	<tr>
 		<td><table width="100%" cellpadding="0" cellspacing="0">
 			<tr>
-				<td class="tall-l2"><img src="/images/k-tl2.gif" alt=""></td>
+				<td class="tall-l2" valign="top"><img src="/images/k-tl2.gif" alt=""></td>
 				<td class="tall-t2" width="100%" align="left">
 					<ul class="ul_1">
     					{foreach from=$Categories item=cat key=key}
@@ -26,7 +26,7 @@
     					{/foreach}
 					</ul>
 				</td>
-				<td class="tall-r2"><img src="/images/k-tr2.gif" alt=""></td>
+				<td class="tall-r2" valign="top"><img src="/images/k-tr2.gif" alt=""></td>
 			</tr>
 		</table></td>
 	</tr>

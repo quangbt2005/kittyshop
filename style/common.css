@@ -97,7 +97,7 @@ div.container{padding: 0px;background-color: #EDF2FC;border: 1px solid #7DCCFF;}
 
 .product a{ text-decoration:none; color:#C11502; }
 
-.wrapper{float: left;background-color: #7DCCFF;padding: 0 0 1 0;}
+.wrapper{float: left;background-color: #e9ee88;padding: 0 0 1 0;}
 div.clear{clear: both;}
 div.seperator{clear: both;width:1px;height:10px;}
 td.title-center
@@ -109,7 +109,7 @@ td.title-center
   text-transform: uppercase;
 }
 
-td.title-corner-left,td.title-corner-right{height: 36px; width: 5px;}
+td.title-corner-left,td.title-corner-right{height: 36px; width: 10px;}
 td.title-corner-left{background: url("/images/title_red_left_5x36.gif") no-repeat scroll left top transparent;}
 td.title-corner-right{background: url("/images/title_red_right_5x36.gif") no-repeat scroll left top transparent;}
 
@@ -280,8 +280,8 @@ tr.newsContent td
 /* --------------------------------------------------------------------------------------------- */
 table.register
 {
-  border: 1px solid rgb(125,204,255);
-  background: none repeat scroll 0 0 #EDF2FC;
+  border: 1px solid #e9ee88;
+  background: none repeat scroll 0 0 #f8ffd9;
   font:normal 14px/20px Tahoma;
   color: black;
 }
