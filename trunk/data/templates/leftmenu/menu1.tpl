@@ -9,7 +9,7 @@
 			<tr>
 				<td class="tall-l"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
 				<td class="heading_text_1">
-					<font color="#010101">Categories:</font>
+					<font color="#010101">CATEGORIES</font>
 				</td>
 				<td class="tall-r"><img src="/images/spacer.gif" width="1" height="1" alt=""></td>
 			</tr>
@@ -47,8 +47,8 @@
 				<tr>
 					<td class="bsl_left"><table width="100%" cellpadding="0" cellspacing="0" class="bsl_right">
 						<tr>
-							<td class="heading_text_1">
-								<font color="#010101">BestSeller:</font>
+							<td class="heading_text_2">
+								<font color="#010101">BÁN CHẠY NHẤT</font>
 							</td>
 						</tr>
 					</table></td>
@@ -60,7 +60,7 @@
 		<td><table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#e1e92c">
 			<tr>
 				<td class="tall-l3"><img src="/images/spacer.gif" width="20" height="1" alt=""></td>
-				<td width="100%" align="center">
+				<td width="100%" align="center" style="padding-bottom: 20px">
 					<div id="slides" class="pics" style="width: 130px;height:130px">
 						{foreach from=$best_seller item=best}
 						<a href="/sanpham/{$best.products_id}/chitiet" title="{$best.products_name}"><img src="/product_thumb.php?f={$best.products_image}&w=auto&h=80&cx=130&cy=130" alt="{$best.products_name}" hspace="0" border="0" width="130" height="130"></a>
