@@ -88,7 +88,7 @@ $(document).ready(function() {
         <!-- <h1>Categories</h1> -->
         <div align="left">
           <input type="button" value="Thêm danh mục" onclick="openAddCategoryPopup();">&nbsp;&nbsp;
-          <input type="button" value="Sửa danh mục" onclick="">&nbsp;&nbsp;
+          <input type="button" value="Sửa danh mục" onclick="editCategory()">&nbsp;&nbsp;
           <input type="button" value="Xóa danh mục" onclick="">
         </div>
         <div id="tree" style="overflow: auto;float: left;">
@@ -182,5 +182,8 @@ function openSaleoffSettingPopup(product_id){
 function deleteCategory(){
 }
 function editCategory(){
+	if($("#tree").dynatree("getActiveNode") != null){
+		alert($("#tree").dynatree("getActiveNode").data.key);
+	}
 }
 </script>{/literal}
