@@ -136,10 +136,10 @@ a.news2{font:bold 15px/20px Arial;color:red;}
 /* --------------------------------------------------------------------------------------------- */
 /* TABLE HEADER
 /* --------------------------------------------------------------------------------------------- */
-.tbl_top_h_l{background:url("/images/top-l.jpg") no-repeat scroll left top transparent;}
+.tbl_top_h_l{/*background:url("/images/top-l.jpg") no-repeat scroll left top transparent;*/}
 .tbl_top_h_r{
-	height: 175px;
-	background:url("/images/top-r.jpg") no-repeat scroll right top transparent;
+	height: 280px;
+	background:url("/images/BANNER_1.jpg") no-repeat scroll left center transparent;
 	vertical-align: bottom;
 }
 .href_h_1,
