@@ -17,20 +17,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $category_parent = $_POST['drpProductCategory'];
   $category_name   = $_POST['txtCategoryName'];
+  $category_icon   = $_POST['txtCategoryImage'];
 
   if(empty($category_name)) $errors[] = 'Vui lòng nhập tên danh mục';
 
   if(count($errors) <= 0){
-    $basefilename = basename($_FILES['txtCategoryImage']['name']);
-    $upload_dir = SYS_IMAGES_PATH . $basefilename;
-    if(!empty($basefilename)){
-      move_uploaded_file($_FILES['txtCategoryImage']['tmp_name'], $upload_dir);
-    }
-
     $id = DB_Insert('categories',array(
       'parent_id'  => $category_parent,
       'sort_order' => '0',
-      'icon'       => $basefilename,
+      'icon'       => $category_icon,
       'date_added' => date('Y-m-d H:i:s'),
     ));
     if(!empty($id)){
