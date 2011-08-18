@@ -16,7 +16,7 @@
     <td style="padding-right: 2px" width="50%">
       <table width="100%" cellpadding="0" cellspacing="0" class="register h300" border="0">
         <tr><td style="height: 32px">Tôi là khách hàng mới.</td></tr>
-        <tr><td style="font: normal 14px/28px Tahoma;">Bằng cách tạo 1 tài khoản tại Be Lam Dep bạn sẽ được sử dụng các tính năng hấp dẫn như: chọn hàng, đặt hàng nhanh hơn, nhận thông tin cập nhật của các sản phẩm khi có thay đổi 1 cách nhanh chóng, xem lại lịch sử đơn hàng cũng như đánh giá các sản phẩm dễ dàng....</td></tr>
+        <tr><td style="font: normal 14px/28px Tahoma;">Bằng cách tạo 1 tài khoản tại MEOKITTY.COM bạn sẽ được sử dụng các tính năng hấp dẫn như: chọn hàng, đặt hàng nhanh hơn, nhận thông tin cập nhật của các sản phẩm khi có thay đổi 1 cách nhanh chóng, xem lại lịch sử đơn hàng cũng như đánh giá các sản phẩm dễ dàng....</td></tr>
         <tr><td class="t-right" style="height: 32px"><a href="/taikhoan/dangky"><img border="0" title=" Đăng ký " alt="Đăng ký" src="/images/languages/vietnam/buttons/button_continue.gif"></a></td></tr>
       </table>
     </td>

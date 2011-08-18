@@ -45,8 +45,11 @@ $Routes = array(
       "/admin/categories"                    => array('module'=>'admin',     'page'=>'categories'),
       "/admin/categories/sub/:parentid"      => array('module'=>'admin',     'page'=>'getsubcategories'),
       "/admin/categories/add/:parentid"      => array('module'=>'adminpopup','page'=>'addcategory'),
+      "/admin/categories/edit/:catid"        => array('module'=>'adminpopup','page'=>'editcategory'),
       "/admin/categories/:catid/products"    => array('module'=>'admin',     'page'=>'listproductsincategory'),
       "/admin/categories/:catid/move/:desid" => array('module'=>'admin',     'page'=>'movecategory'),
+      "/admin/categories/:catid/delete"      => array('module'=>'admin',     'page'=>'deletecategory'),
+      "/admin/categories/iconboard"          => array('module'=>'adminpopup','page'=>'iconboard'),
       "/admin/products/add/:catid"           => array('module'=>'adminpopup','page'=>'addproduct'),
       "/admin/products/delete/:productid/:catid" => array('module'=>'admin', 'page'=>'deleteproduct'),
       "/admin/products/edit/:productid"      => array('module'=>'adminpopup','page'=>'editproduct'),
@@ -123,6 +126,7 @@ $Module_Map = array(
           "getsubcategories" => MODULES_PATH . "admin/categories/getsubcategories.inc",
           "listproductsincategory" => MODULES_PATH . "admin/categories/listproductsincategory.inc",
           "deleteproduct"    => MODULES_PATH . "admin/products/deleteproduct.inc",
+          "deletecategory"   => MODULES_PATH . "admin/categories/deletecategory.inc",
           "movecategory"     => MODULES_PATH . "admin/categories/movecategory.inc",
           "orderslist"       => MODULES_PATH . "admin/orders/list.inc",
           "ordersdelete"     => MODULES_PATH . "admin/orders/delete.inc",
@@ -131,10 +135,12 @@ $Module_Map = array(
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
+          "editcategory"     => MODULES_PATH . "admin/categories/editcategory.inc",
           "addproduct"       => MODULES_PATH . "admin/products/addproduct.inc",
           "editproduct"      => MODULES_PATH . "admin/products/editproduct.inc",
           "orderdetail"      => MODULES_PATH . "admin/orders/detail.inc",
           "saleoffsetting"   => MODULES_PATH . "admin/products/saleoff_setting.inc",
+          "iconboard"        => MODULES_PATH . "admin/categories/iconboard.inc",
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -150,7 +156,8 @@ $Ajax_Map = array(
           "movecategory",
           "deleteproduct",
           "ordersdelete",
-          "getorderslist"
+          "getorderslist",
+          "deletecategory"
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -251,8 +258,8 @@ $Footer_Map = array(
 // TITLE
 // ---------------------------------------------------------------------------------------------- //
 $Title_Map = array(
-      "default"     => "Be lam dep",
-      "admin"       => "Be Lam Dep - Quan Tri",
-      "adminpopup"  => "Be Lam Dep - Quan Tri",
+      "default"     => "MEOKITTY",
+      "admin"       => "MEOKITTY - Quan Tri",
+      "adminpopup"  => "MEOKITTY - Quan Tri",
 );
 ?>
