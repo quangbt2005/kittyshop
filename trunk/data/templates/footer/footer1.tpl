@@ -6,7 +6,7 @@
 </div><div class="clear">
 <div class="w100p">
   <span class="f7 fb">
-  <p>Bản quyền © 2010 Be Lam Dep</p>
+  <p>Bản quyền © 2011 MEOKITTY.COM</p>
   {$STORE_ADDRESS}<br>
   Điện Thoại: {$PHONE_1}<br>
   Email: {$STORE_EMAIL}

@@ -88,8 +88,8 @@ $(document).ready(function() {
         <!-- <h1>Categories</h1> -->
         <div align="left">
           <input type="button" value="Thêm danh mục" onclick="openAddCategoryPopup();">&nbsp;&nbsp;
-          <input type="button" value="Sửa danh mục" onclick="editCategory()">&nbsp;&nbsp;
-          <input type="button" value="Xóa danh mục" onclick="">
+          <input type="button" value="Sửa danh mục" onclick="openEditCategoryPopup();">&nbsp;&nbsp;
+          <input type="button" value="Xóa danh mục" onclick="deleteCategory();">
         </div>
         <div id="tree" style="overflow: auto;float: left;">
           {$Tree}
@@ -114,16 +114,21 @@ var popupWidth  = 840;
 var popupHeight = 700;
 function openAddProductPopup(){
   var url = '/admin/products/add/';
+  var dtnode_id = 0;
   if($("#tree").dynatree("getActiveNode") != null){
-    var dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
-    url = url + dtnode_id;
+    dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
+  } else {
+    dtnode_id = $("#tree").dynatree("getRoot").childList[0].data.key;
   }
-  else url = '/admin/products/add/' + $("#tree").dynatree("getRoot").childList[0].data.key;
+  if(dtnode_id > 0){
+    url = url + dtnode_id;
+    var topPos = 150;
+    var leftPos = 310;
 
-  var topPos = 150;
-  var leftPos = 310;
-
-  var popup = window.open(url, 'Them_san_pham_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+    var popup = window.open(url, 'Them_san_pham_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  } else {
+    alert('Chưa chọn Danh mục hoặc Danh mục này không thể chứa sản phẩm');
+  }
 }
 function reloadProductList(category_id)
 {
@@ -134,34 +139,66 @@ function reloadProductList(category_id)
     }
   }
 }
-function addTreeNewCategory(category_id, category_name)
+function addTreeNewCategory(category_id, category_name, parent_id)
 {
-  if($("#tree").dynatree("getActiveNode") != null){
-    activenode = $("#tree").dynatree("getActiveNode").addChild({
-      title: category_name,
-      key: category_id,
-      isFolder: true
-    });
+  if(parent_id == 0){
+    activenode = $("#tree").dynatree("getRoot").addChild({
+        title: category_name,
+        key: category_id,
+        isFolder: true
+      });
   } else {
-    activenode = $("#tree").dynatree("getRoot").childList[0].addChild({
-      title: category_name,
-      key: category_id,
-      isFolder: true
-    });
+    if($("#tree").dynatree("getActiveNode") != null){
+      activenode = $("#tree").dynatree("getActiveNode").addChild({
+        title: category_name,
+        key: category_id,
+        isFolder: true
+      });
+    } else {
+      activenode = $("#tree").dynatree("getRoot").childList[0].addChild({
+        title: category_name,
+        key: category_id,
+        isFolder: true
+      });
+    }
   }
+}
+function editTreeCategory(category_name)
+{
+  var node = $("#tree").dynatree("getActiveNode");
+  node.data.title = category_name;
+  node.render();
 }
 function openAddCategoryPopup(){
   var url = '/admin/categories/add/';
   if($("#tree").dynatree("getActiveNode") != null){
     var dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
     url = url + dtnode_id;
-  }
-  else url = '/admin/categories/add/' + $("#tree").dynatree("getRoot").childList[0].data.key;
+  } else url = '/admin/categories/add/' + $("#tree").dynatree("getRoot").childList[0].data.key;
 
   var topPos = 150;
   var leftPos = 310;
 
   var popup = window.open(url, 'Them_danh_muc_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+}
+function openEditCategoryPopup(){
+  var url = '/admin/categories/edit/';
+  var dtnode_id = 0;
+  if($("#tree").dynatree("getActiveNode") != null){
+    dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
+  } else {
+    dtnode_id = $("#tree").dynatree("getRoot").childList[0].data.key;
+  }
+  if(dtnode_id > 0){
+    url = url + dtnode_id;
+
+    var topPos = 150;
+    var leftPos = 310;
+
+    var popup = window.open(url, 'Sua_danh_muc',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
+  } else {
+    alert('Chưa chọn Danh mục hoặc Danh mục này không thể hiệu chỉnh');
+  }
 }
 function openEditProductPopup(product_id){
   var url = '/admin/products/edit/' + product_id;
@@ -180,10 +217,45 @@ function openSaleoffSettingPopup(product_id){
   var popup = window.open(url, 'Khuyen_mai_san_pham',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
 function deleteCategory(){
+  var dtnode_id = 0;
+  var dtnode = null;
+  var _confirm = false;
+
+  if($("#tree").dynatree("getActiveNode") != null){
+    dtnode = $("#tree").dynatree("getActiveNode");
+    dtnode_id = $("#tree").dynatree("getActiveNode").data.key;
+  } else {
+    dtnode = $("#tree").dynatree("getRoot").childList[0];
+    dtnode_id = $("#tree").dynatree("getRoot").childList[0].data.key;
+  }
+
+  if(dtnode_id > 0){
+    if(dtnode.hasChildren())
+    {
+      _confirm = confirm("Xóa danh mục " + dtnode.data.title + " và toàn bộ danh mục con ?");
+      //var nodes = dtnode.childList;
+      //alert(nodes.length);
+    } else {
+      _confirm = confirm("Xóa danh mục " + dtnode.data.title + " ?");
+    }
+    if(_confirm){
+      recursiveDeleteNode(dtnode);
+      $("#tree").dynatree("getRoot").render();
+    }
+  } else {
+    alert('Chưa chọn Danh mục hoặc Danh mục này không thể xóa');
+  }
 }
-function editCategory(){
-	if($("#tree").dynatree("getActiveNode") != null){
-		alert($("#tree").dynatree("getActiveNode").data.key);
-	}
+function recursiveDeleteNode(node){
+  if(node.hasChildren()){
+    var children = node.childList;
+    for(i=0;i < children.length;i++){
+      recursiveDeleteNode(children[i]);
+    }
+  }
+  var url = "/admin/categories/" + node.data.key + "/delete";
+  $.get(url, function(data){
+    node.remove();
+  });
 }
 </script>{/literal}

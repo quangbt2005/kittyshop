@@ -41,9 +41,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
       ));
     }
 
-    $_SESSION['flash']['insert_category_ok'] = '1';
-    $_SESSION['flash']['new_category_id']    = $id;
-    $_SESSION['flash']['new_category_name']  = $category_name;
+    $_SESSION['flash']['insert_category_ok']     = '1';
+    $_SESSION['flash']['new_category_id']        = $id;
+    $_SESSION['flash']['new_category_name']      = $category_name;
+    $_SESSION['flash']['new_category_parent_id'] = $category_parent;
     header("Location: /admin/categories/add/" . $Request['parameters'][':parentid']);
     exit;
   }
@@ -52,9 +53,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $smarty->assign('insert_category_ok', '1');
     $smarty->assign('new_category_id', $_SESSION['flash']['new_category_id']);
     $smarty->assign('new_category_name', $_SESSION['flash']['new_category_name']);
+    $smarty->assign('parent_id', $_SESSION['flash']['new_category_parent_id']);
     unset($_SESSION['flash']['insert_category_ok']);
     unset($_SESSION['flash']['new_category_id']);
     unset($_SESSION['flash']['new_category_name']);
+    unset($_SESSION['flash']['new_category_parent_id']);
   }
 }
 
