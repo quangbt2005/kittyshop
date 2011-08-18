@@ -22,20 +22,15 @@ if(!$category)
     $category_parent = $_POST['drpProductCategory'];
     $category_name   = $_POST['txtCategoryName'];
     $parent_id       = $_POST['drpProductCategory'];
+    $category_icon   = $_POST['txtCategoryImage'];
 
     if(empty($category_name)) $errors[] = 'Vui lòng nhập tên danh mục';
 
     if(count($errors) <= 0){
-      $basefilename = basename($_FILES['txtCategoryImage']['name']);
-      $upload_dir = SYS_IMAGES_PATH . $basefilename;
-      if(!empty($basefilename)){
-        move_uploaded_file($_FILES['txtCategoryImage']['tmp_name'], $upload_dir);
-      }
-
       DB_Update('categories',array('categories_id' => $category_id),array(
         'parent_id'  => $category_parent,
         'sort_order' => '0',
-        'icon'       => $basefilename,
+        'icon'       => $category_icon,
         'date_added' => date('Y-m-d H:i:s'),
       ));
       DB_Update('categories_description',array('categories_id' => $category_id),array(
@@ -56,6 +51,7 @@ if(!$category)
       unset($_SESSION['flash']['new_category_name']);
     }
     $smarty->assign('category_name', $category['categories_name']);
+    $smarty->assign('category_icon', $category['icon']);
   }
 }
 $html_select_categories = create_html_select_categories($parent_id);

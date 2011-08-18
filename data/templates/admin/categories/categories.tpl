@@ -122,8 +122,8 @@ function openAddProductPopup(){
   }
   if(dtnode_id > 0){
     url = url + dtnode_id;
-    var topPos = 150;
-    var leftPos = 310;
+    var topPos = (getHeight()-popupHeight)/2;
+	var leftPos = (getWidth()-popupWidth)/2;
 
     var popup = window.open(url, 'Them_san_pham_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
   } else {
@@ -176,8 +176,8 @@ function openAddCategoryPopup(){
     url = url + dtnode_id;
   } else url = '/admin/categories/add/' + $("#tree").dynatree("getRoot").childList[0].data.key;
 
-  var topPos = 150;
-  var leftPos = 310;
+  var topPos = (getHeight()-popupHeight)/2;
+  var leftPos = (getWidth()-popupWidth)/2;
 
   var popup = window.open(url, 'Them_danh_muc_moi',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
@@ -192,8 +192,8 @@ function openEditCategoryPopup(){
   if(dtnode_id > 0){
     url = url + dtnode_id;
 
-    var topPos = 150;
-    var leftPos = 310;
+    var topPos = (getHeight()-popupHeight)/2;
+	var leftPos = (getWidth()-popupWidth)/2;
 
     var popup = window.open(url, 'Sua_danh_muc',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
   } else {
@@ -211,8 +211,8 @@ function openEditProductPopup(product_id){
 function openSaleoffSettingPopup(product_id){
   var url = '/admin/products/saleoff/' + product_id;
 
-  var topPos = 150;
-  var leftPos = 310;
+  var topPos = (getHeight()-popupHeight)/2;
+	var leftPos = (getWidth()-popupWidth)/2;
 
   var popup = window.open(url, 'Khuyen_mai_san_pham',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
