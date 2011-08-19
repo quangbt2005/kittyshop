@@ -46,8 +46,8 @@
               <tr>
                 <td width="20"><input type="checkbox"{if $bank.active==1} checked{/if} name="bank_active[]" id="bank_active{$bank.id}" value="{$bank.id}"></td>
                 <td width="160"><img src="/images/banks/{$bank.image}" border="0" title="{$bank.bank_name}" alt="{$bank.bank_name}"></td>
-                <td>Số tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountNo{$bank.id}" value="{$bank.account_no}"></td>
-                <td>Tên chủ tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountName{$bank.id}" value="{$bank.account_name}"></td>
+                <td>Số tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountNo[{$bank.id}]" value="{$bank.account_no}"></td>
+                <td>Tên chủ tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountName[{$bank.id}]" value="{$bank.account_name}"></td>
               </tr>
               {/foreach}
             </table>

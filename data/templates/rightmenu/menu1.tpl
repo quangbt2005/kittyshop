@@ -137,12 +137,14 @@
 				<tr>
 					<td class="tall-l4"><img src="/images/spacer.gif" width="20" height="1" alt=""></td>
 					<td class="tall-m4" width="100%"><table width="100%" cellpadding="0" cellspacing="0" border="0">
+						{foreach from=$BankList item=bank}
 						<tr>
-							<td style="padding: 10px 0"><img src="/images/vcb.png" border="0"></td>
+							<td style="padding: 10px 0"><img src="/images/banks/{$bank.image}" border="0" alt="{$bank.bank_name}" title="{$bank.bank_name}"></td>
 						</tr>
 						<tr>
-							<td style="font-size: 14px;">Nguyễn Thị Thanh Thủy<br><font color="#ff0000">025 100 158 7962</font></td>
+							<td style="font-size: 14px;padding-left:5px;"><b><span title="Tên chủ tài khoản {$bank.bank_name}">{$bank.account_name}</span><br><font color="#ff0000" title="Số tài khoản {$bank.bank_name}">{$bank.account_no}</font></b></td>
 						</tr>
+						{/foreach}
 						<tr>
 							<th style="padding: 10px 0"><a href="http://baokim.vn" target="blank"><img src="/images/baokim_logo.jpg" width="160" border="0"></a></th>
 						</tr>

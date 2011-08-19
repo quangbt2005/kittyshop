@@ -99,10 +99,10 @@
 					<td class="tall-l4"><img src="/images/spacer.gif" width="20" height="1" alt=""></td>
 					<td class="tall-m4" width="100%">
 						<div style="width: 100%">
-						<div class="side_container">
-						  <p class="phone_contact">0909 217 130</p>
-						  <a class="contact" href="ymsgr:sendIM?thuynguyenc2"><p class="yahoo_contact">thuynguyenc2</p></a>
-						</div>
+						  <div class="side_container t-left">
+						    <p class="phone_contact">{$PHONE_2}</p>
+						    <a class="contact" href="ymsgr:sendIM?{$CHAT_1}"><p class="yahoo_contact">{$CHATTITLE_1}</p></a>
+						  </div>
 						</div>
 					</td>
 					<td class="tall-r4"><img src="/images/spacer.gif" width="20" height="1" alt=""></td>
