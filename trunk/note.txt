@@ -1,1 +1,40 @@
 http://www.saokim.com.vn/mau-thiet-ke-he-thong-bang-hieu-cho-chuoi-cua-hang-thoi-trang-hugnkiss-gv1875.html
+
+/*
+SQLyog Enterprise - MySQL GUI v6.13
+MySQL - 5.1.36-community-log : Database - thamtuth_kittyshop
+*********************************************************************
+*/
+
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+create database if not exists `thamtuth_kittyshop`;
+
+USE `thamtuth_kittyshop`;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+/*Table structure for table `bank_account` */
+
+DROP TABLE IF EXISTS `bank_account`;
+
+CREATE TABLE `bank_account` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `bank_name` varchar(512) DEFAULT NULL,
+  `image` varchar(512) DEFAULT NULL,
+  `account_no` varchar(64) DEFAULT NULL,
+  `account_name` varchar(512) DEFAULT NULL,
+  `active` enum('0','1') DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+
+/*Data for the table `bank_account` */
+
+insert  into `bank_account`(`id`,`bank_name`,`image`,`account_no`,`account_name`,`active`) values (1,'Vietcombank','vcb.png','0000000001','KITTY.COM','1'),(2,'DongABank','dab.png','0000000001','KITTY.COM','1'),(3,'ACB','acb.png','0000000001','KITTY.COM','0'),(4,'VietinBank','vietinbank.png','0000000001','KITTY.COM','1'),(5,'BIDV','bidv.png','0000000001','KITTY.COM','0'),(6,'Sacombank','sacombank.png','0000000001','KITTY.COM','1'),(7,'HD Bank','hdbank.png','0000000001','KITTY.COM','0'),(8,'MHB','mhb.png','0000000001','KITTY.COM','0'),(9,'Techcombank','techcombank.png','0000000001','KITTY.COM','0'),(10,'Agribank','agribank.png','0000000001','KITTY.COM','0');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

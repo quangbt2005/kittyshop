@@ -34,12 +34,16 @@ function DB_Update($table, $conditions, $values){
   foreach($values as $key=>$value){
     $query_values[] = $key . "='" . P_SQL_Quote($value) . "'";
   }
-  foreach($conditions as $key=>$value){
-    $query_conditions[] = $key . "='" . P_SQL_Quote($value) . "'";
+  if(!empty($conditions)){
+    foreach($conditions as $key=>$value){
+      $query_conditions[] = $key . "='" . P_SQL_Quote($value) . "'";
+    }
   }
 
   $query  = 'UPDATE ' . $table . ' SET ' . implode(',', $query_values);
-  $query .= ' WHERE ' . implode(' AND ', $query_conditions);
+  if(!empty($conditions)){
+    $query .= ' WHERE ' . implode(' AND ', $query_conditions);
+  }
 
   P_MySQL_Real_Exec($query);
 }

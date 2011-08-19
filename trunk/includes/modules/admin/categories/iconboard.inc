@@ -13,7 +13,7 @@ if(count($Icons[$rowcount-1])<$icon_onrow){
   $Icons[$rowcount-1] = array_pad($Icons[$rowcount-1], 5, "cat_deko.png");
 }
 
-$IconsBoard = '<table width="100%" cellpadding="0" cellspacing="0">';
+$IconsBoard = '<div style="width: 100%;height: 200px;overflow-y: scroll"><table width="100%" cellpadding="0" cellspacing="0">';
 foreach($Icons as $RowIcon){
   $IconsBoard .= '<tr>';
   foreach($RowIcon as $icon){
@@ -21,7 +21,7 @@ foreach($Icons as $RowIcon){
   }
   $IconsBoard .= '</tr>';
 }
-$IconsBoard .= '</table>';
+$IconsBoard .= '</table></div>';
 $smarty->assign('IconsBoard', $IconsBoard);
 $center_col = $smarty->fetch( "admin/categories/iconboard.tpl" );
 ?>
