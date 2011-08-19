@@ -3,7 +3,10 @@
 /* Created on May 30, 2010                                                                        */
 /**************************************************************************************************/
 require_once( FUNCTIONS_PATH . "DB.inc" );
+require_once( FUNCTIONS_PATH . "bankaccounts/bankaccounts_db.inc" );
 // ---------------------------------------------------------------------------------------------- //
+$BankList = ListBankAccountForAdmin();
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
   DB_Update('configuration', array('configuration_key' => 'ADMIN_EMAIL'),
                              array('configuration_value' => P_SQL_Quote($_POST['txtEmail2'])));
@@ -21,10 +24,25 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                              array('configuration_value' => P_SQL_Quote($_POST['txtChat1'])));
   DB_Update('configuration', array('configuration_key' => 'CHATTITLE_1'),
                              array('configuration_value' => P_SQL_Quote($_POST['txtChat1Title'])));
-  DB_Update('configuration', array('configuration_key' => 'CHAT_2'),
-                             array('configuration_value' => P_SQL_Quote($_POST['txtChat2'])));
-  DB_Update('configuration', array('configuration_key' => 'CHATTITLE_2'),
-                             array('configuration_value' => P_SQL_Quote($_POST['txtChat2Title'])));
+//  DB_Update('configuration', array('configuration_key' => 'CHAT_2'),
+//                             array('configuration_value' => P_SQL_Quote($_POST['txtChat2'])));
+//  DB_Update('configuration', array('configuration_key' => 'CHATTITLE_2'),
+//                             array('configuration_value' => P_SQL_Quote($_POST['txtChat2Title'])));
+  DB_Update('bank_account', array(), array('active' => '0'));
+  if(isset($_POST['bank_active']) && !empty($_POST['bank_active'])){
+    foreach($_POST['bank_active'] as $bankActive){
+      DB_Update('bank_account', array('id' => $bankActive), array('active' => '1'));
+    }
+  }
+
+  $_SESSION['flash']['update_configuration_ok'] = '1';
+  header("Location: /admin/shop/config/" . $category_id);
+} else {
+  if($_SESSION['flash']['update_configuration_ok'] == '1'){
+    $smarty->assign('update_configuration_ok', '1');
+    unset($_SESSION['flash']['update_configuration_ok']);
+  }
 }
+$smarty->assign('BankList', $BankList);
 $center_col = $smarty->fetch( "admin/shop/configuration.tpl" );
 ?>
