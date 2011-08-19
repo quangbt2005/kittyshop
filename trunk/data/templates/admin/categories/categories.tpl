@@ -203,8 +203,8 @@ function openEditCategoryPopup(){
 function openEditProductPopup(product_id){
   var url = '/admin/products/edit/' + product_id;
 
-  var topPos = 150;
-  var leftPos = 310;
+  var topPos = (getHeight()-popupHeight)/2;
+  var leftPos = (getWidth()-popupWidth)/2;
 
   var popup = window.open(url, 'Hieu_chinh_thong_tin_san_pham',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
