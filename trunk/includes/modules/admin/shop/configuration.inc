@@ -8,6 +8,7 @@ require_once( FUNCTIONS_PATH . "bankaccounts/bankaccounts_db.inc" );
 $BankList = ListBankAccountForAdmin();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+//pd($_POST);
   DB_Update('configuration', array('configuration_key' => 'ADMIN_EMAIL'),
                              array('configuration_value' => P_SQL_Quote($_POST['txtEmail2'])));
   DB_Update('configuration', array('configuration_key' => 'STORE_ADDRESS'),
@@ -33,6 +34,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     foreach($_POST['bank_active'] as $bankActive){
       DB_Update('bank_account', array('id' => $bankActive), array('active' => '1'));
     }
+  }
+  foreach($_POST['txtAccountNo'] as $bankID=>$value){
+    DB_Update('bank_account', array('id' => $bankID), array('account_no'   => $value,
+					  										'account_name' => $_POST['txtAccountName'][$bankID])
+	);
   }
 
   $_SESSION['flash']['update_configuration_ok'] = '1';
