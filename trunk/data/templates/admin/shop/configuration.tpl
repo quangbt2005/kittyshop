@@ -1,3 +1,28 @@
+{literal}
+<script type="text/javascript" language="javascript">
+$(document).ready(function() {
+  $('textarea.tinymce').tinymce({
+    // Location of TinyMCE script
+    script_url : '/jscripts/jquery/tiny_mce/tiny_mce.js',
+
+    // General options
+    theme : "advanced",
+    // plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
+    plugins : "advimage,advlink,insertdatetime,directionality",
+
+    // Theme options
+    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect",
+    theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor",
+    theme_advanced_buttons3 : "",
+    theme_advanced_toolbar_location : "top",
+    theme_advanced_toolbar_align : "left",
+
+    external_link_list_url : "lists/link_list.js",
+	external_image_list_url : "lists/image_list.js",
+  });
+});
+</script>
+{/literal}
 <div id="bigBox">
   <div class="box">
     <div class="left"></div>
@@ -51,6 +76,12 @@
               </tr>
               {/foreach}
             </table>
+          </td>
+        </tr>
+        <tr>
+          <th valign="top" align="right" style="padding-right: 5px">Hướng dẫn mua hàng</th>
+          <td colspan="3">
+          	<textarea name="txtBuyingHelp" rows="25" class="tinymce" style="width: 100%;">AAAAS</textarea>
           </td>
         </tr>
         <tr>
