@@ -6,6 +6,7 @@ $configkey = array(
   "'PHONE'",
   "'CHAT'",
   "'CHATTITLE'",
+  "'BUYINGHELP'",
 );
 
 $condition = implode(',', $configkey);

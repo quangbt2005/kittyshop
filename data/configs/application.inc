@@ -34,6 +34,7 @@ define( 'STYLES_PATH',                WEB_ROOT . 'styles/' );
 
 define( 'SYS_IMAGES_PATH',            SYS_ROOT . 'images/' );
 define( 'SYS_UPLOAD_PATH',            SYS_ROOT . 'uploads/' );
+define( 'SYS_PRODUCTS_IMAGES',        SYS_IMAGES_PATH . 'products/' );
 
 define( 'DEFAULT_MODULE',             'home' );
 define( 'DEFAULT_PAGE',               'default' );
@@ -68,23 +69,12 @@ define( 'URL_NO_MODULE',   WEB_ROOT . 'errors/nopage' );
 define( 'URL_NO_PRODUCT',  WEB_ROOT . 'errors/noproduct' );
 define( 'URL_SUBMIT_CART', WEB_ROOT . 'cart/submit' );
 define( 'URL_ORDER_COMPLETE', WEB_ROOT . 'cart/complete' );
-// ---------------------------------------------------------------------------------------------- //
-// MAIL
-// ---------------------------------------------------------------------------------------------- //
-// define( 'ADMIN_EMAIL', 'quangbt2005@gmail.com' );
-// define( 'SUPPORT_EMAIL', 'quangbt2005@gmail.com' );
 
 define( 'LANGUAGE_ID', 1 );
 define( 'LANGUAGE', 'vietnam' );
 define( 'SMALL_IMAGE_HEIGHT', 80 );
 define( 'HEADING_NEWS_IMAGE_WIDTH', '100' );
 define( 'HEADING_NEWS_IMAGE_HEIGHT', '100' );
-// ---------------------------------------------------------------------------------------------- //
-// STORE CONTACT INFO
-// ---------------------------------------------------------------------------------------------- //
-// define( 'STORE_ADDRESS', '36/52 &#273;&#432;&#7901;ng D2, P.25, Q.B&#236;nh Th&#7841;nh, TP.H&#7891; Ch&#237; Minh' );
-// define( 'STORE_PHONE_1', '0909 217 130' );
-// define( 'STORE_EMAIL_1', 'admin@belamdep.com' );
 // ---------------------------------------------------------------------------------------------- //
 // YM NOTIFIER CONFIG
 // ---------------------------------------------------------------------------------------------- //

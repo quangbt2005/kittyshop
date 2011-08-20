@@ -8,11 +8,11 @@ $(document).ready(function() {
     // General options
     theme : "advanced",
     // plugins : "pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template,advlist",
-    plugins : "advimage,advlink,insertdatetime,directionality",
+    plugins : "advimage,advlink,insertdatetime,directionality,table",
 
     // Theme options
-    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect",
-    theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor",
+    theme_advanced_buttons1 : "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,fontselect,fontsizeselect,|,code",
+    theme_advanced_buttons2 : "link,unlink,image,|,forecolor,backcolor,|,bullist,numlist,|,outdent,indent,|,tablecontrols",
     theme_advanced_buttons3 : "",
     theme_advanced_toolbar_location : "top",
     theme_advanced_toolbar_align : "left",
@@ -71,8 +71,8 @@ $(document).ready(function() {
               <tr>
                 <td width="20"><input type="checkbox"{if $bank.active==1} checked{/if} name="bank_active[]" id="bank_active{$bank.id}" value="{$bank.id}"></td>
                 <td width="160"><img src="/images/banks/{$bank.image}" border="0" title="{$bank.bank_name}" alt="{$bank.bank_name}"></td>
-                <td>Số tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountNo[{$bank.id}]" value="{$bank.account_no}"></td>
-                <td>Tên chủ tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountName[{$bank.id}]" value="{$bank.account_name}"></td>
+                <td nowrap>Số tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountNo[{$bank.id}]" value="{$bank.account_no}"></td>
+                <td width="100%">Tên chủ tài khoản&nbsp;&nbsp;<input type="text" class="w150" name="txtAccountName[{$bank.id}]" value="{$bank.account_name}"></td>
               </tr>
               {/foreach}
             </table>
@@ -81,7 +81,7 @@ $(document).ready(function() {
         <tr>
           <th valign="top" align="right" style="padding-right: 5px">Hướng dẫn mua hàng</th>
           <td colspan="3">
-          	<textarea name="txtBuyingHelp" rows="25" class="tinymce" style="width: 100%;">AAAAS</textarea>
+          	<textarea name="txtBuyingHelp" rows="25" class="tinymce" style="width: 560px;">{$BUYINGHELP}</textarea>
           </td>
         </tr>
         <tr>

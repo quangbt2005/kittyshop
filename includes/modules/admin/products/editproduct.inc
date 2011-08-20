@@ -22,7 +22,8 @@ if(!empty($product)){
     $product_price       = $_POST['txtProductPrice'];
     $product_name        = $_POST['txtProductName'];
     $product_description = $_POST['txtProductDescription'];
-    $product_quantity    = $_POST['txtProductQuantity'];
+    //$product_quantity    = $_POST['txtProductQuantity'];
+    $product_image       = $_POST['txtProductImage'];
 
     if(empty($product_name)) $errors[] = 'Vui lòng nhập tên sản phẩm';
     if(empty($product_price)) $errors[] = 'Vui lòng nhập giá sản phẩm';
@@ -32,25 +33,21 @@ if(!empty($product)){
       $errors[] = 'Số lượng sản phẩm không hợp lệ';
 
     if(count($errors) <= 0){
-      $basefilename = basename($_FILES['txtProductImage']['name']);
-      if(!empty($basefilename)){
+      if(!empty($product_image)){
         if(!empty($product['products_image'])){
-        	$oldimage = SYS_IMAGES_PATH . $product['products_image'];
+        	$oldimage = SYS_PRODUCTS_IMAGES . $product['products_image'];
           unlink($oldimage);
         }
 
-        $upload_dir = SYS_IMAGES_PATH . $basefilename;
-        move_uploaded_file($_FILES['txtProductImage']['tmp_name'], $upload_dir);
-
         DB_Update('products', array('products_id' => $product_id),array(
-          'products_quantity'      => $product_quantity,
+          //'products_quantity'      => $product_quantity,
           'products_price'         => $product_price,
-          'products_image'         => $basefilename,
+          'products_image'         => $product_image,
           'products_last_modified' => date('Y-m-d H:i:s'),
         ));
       } else {
       	DB_Update('products', array('products_id' => $product_id),array(
-          'products_quantity'      => $product_quantity,
+          //'products_quantity'      => $product_quantity,
           'products_price'         => $product_price,
           'products_last_modified' => date('Y-m-d H:i:s'),
         ));
@@ -77,7 +74,8 @@ if(!empty($product)){
       $product_price       = $product['products_price'];
       $product_name        = $product['products_name'];
       $product_description = $product['products_description'];
-      $product_quantity    = $product['txtProductQuantity'];
+      // $product_quantity    = $product['txtProductQuantity'];
+      $product_image       = $product['products_image'];
     }
   }
 
@@ -86,7 +84,7 @@ if(!empty($product)){
   $smarty->assign('txtProductName', $product_name);
   $smarty->assign('txtProductPrice', (int)$product_price);
   $smarty->assign('txtProductDescription', $product_description);
-  $smarty->assign('txtProductQuantity', $product_quantity);
+  // $smarty->assign('txtProductQuantity', $product_quantity);
   $smarty->assign('txtProductSPPrice', $product['special_price']);
   $smarty->assign('txtProductImage', $product['products_image']);
 

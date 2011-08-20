@@ -41,6 +41,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	);
   }
 
+  DB_Update('configuration', array('configuration_key' => 'BUYINGHELP'),
+                             array('configuration_value' => ($_POST['txtBuyingHelp'])));
+
   $_SESSION['flash']['update_configuration_ok'] = '1';
   header("Location: /admin/shop/config/" . $category_id);
 } else {

@@ -3,9 +3,7 @@
 </table>
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="register">
   <tr>
-    <td>
-	<font color="#3366ff"><b>Để mua hàng trên belamdep.com các bạn làm theo các bước sau:</b><br><ul><b>Bước 1:</b>&nbsp;Chọn hàng cần mua từ các danh mục sản phẩm, click vào nút <u>[Đặt hàng]</u> để đưa sản phẩm vào giỏ hàng.</ul><br><ul><b>Bước 2:</b>&nbsp;Kiểm tra giỏ hàng, cập nhật số lượng sản phẩm đã mua, Chọn <u>[Tiếp tục]</u> để mua tiếp sản phẩm khác, hoặc chọn <u>[Hoàn Tất]</u> để hoàn tất đơn hàng, chuyển sang bước thanh toán.         </ul>&nbsp;<ul><b>Bước 3:</b> Điền các thông tin cần thiết ở bước thanh toán để kết thúc việc mua hàng .         </ul></font>
-    </td>
+    <td><div style="text-align: left;margin:0;padding:0">{$BUYINGHELP}</div></td>
   </tr>
 </table><br>
 <table border="0" cellpadding="0" cellspacing="0" width="100%" class="register">

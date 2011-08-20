@@ -1,4 +1,6 @@
 <?php
+include_once('data/configs/application.inc');
+
 function setTransparency($new_image,$image_source)
 {
   $transparencyIndex = imagecolortransparent($image_source);
@@ -15,9 +17,9 @@ function setTransparency($new_image,$image_source)
 
 $f  = $_GET['f'];
 
-$img_dir = 'images/';
+$img_dir = SYS_PRODUCTS_IMAGES;
 if(!is_file($img_dir.$f)){
-  $f = 'noimage.jpg';
+  $f = '../noimage.jpg';
 }
 $gis = getimagesize($img_dir.$f);
 $type = $gis[2];
