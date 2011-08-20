@@ -59,6 +59,8 @@ $Routes = array(
       "/admin/orders/:orderid/delete"        => array('module'=>'admin',     'page'=>'ordersdelete'),
       "/admin/orders/getlist"                => array('module'=>'admin',     'page'=>'getorderslist'),
       "/admin/shop/config"                   => array('module'=>'admin',     'page'=>'shopconfig'),
+      "/admin/:filename/uploadproductimage"  => array('module'=>'admin',     'page'=>'uploadproductimage'),
+      "/admin/testupload"                    => array('module'=>'test',      'page'=>'testupload'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -132,6 +134,8 @@ $Module_Map = array(
           "ordersdelete"     => MODULES_PATH . "admin/orders/delete.inc",
           "getorderslist"    => MODULES_PATH . "admin/orders/getlist.inc",
           "shopconfig"       => MODULES_PATH . "admin/shop/configuration.inc",
+          "uploadproductimage" => MODULES_PATH . "admin/products/upload_product_image.inc",
+          "testupload"       => MODULES_PATH . "admin/products/testupload.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
@@ -141,7 +145,10 @@ $Module_Map = array(
           "orderdetail"      => MODULES_PATH . "admin/orders/detail.inc",
           "saleoffsetting"   => MODULES_PATH . "admin/products/saleoff_setting.inc",
           "iconboard"        => MODULES_PATH . "admin/categories/iconboard.inc",
-      )
+      ),
+      "test"            => array(
+          "testupload"       => MODULES_PATH . "test/testupload.inc",
+      ),
 );
 // ---------------------------------------------------------------------------------------------- //
 //
@@ -157,7 +164,8 @@ $Ajax_Map = array(
           "deleteproduct",
           "ordersdelete",
           "getorderslist",
-          "deletecategory"
+          "deletecategory",
+          "uploadproductimage"
       )
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -185,6 +193,7 @@ $Layout_Map = array(
       "orders"      => "layouts/layout03.tpl",
       "admin"       => "admin/layouts/layout01.tpl",
       "adminpopup"  => "admin/layouts/popup.tpl",
+      "test"        => "test/layouts/layout01.tpl"
 );
 // ---------------------------------------------------------------------------------------------- //
 // LEFT MENU
@@ -202,6 +211,7 @@ $Left_Menu_Map = array(
       "news"        => MODULES_PATH . "leftmenu/menu2.inc",
       "admin"       => MODULES_PATH . "admin/leftmenu/menu1.inc",
       "adminpopup"  => MODULES_PATH . "admin/leftmenu/menu1.inc",
+      "test"        => MODULES_PATH . "test/menu/leftmenu1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // RIGHT MENU
@@ -219,6 +229,7 @@ $Right_Menu_Map = array(
       "news"        => MODULES_PATH . "rightmenu/menu1.inc",
       "admin"       => MODULES_PATH . "admin/rightmenu/menu1.inc",
       "adminpopup"  => MODULES_PATH . "admin/rightmenu/menu1.inc",
+      "test"        => MODULES_PATH . "test/menu/rightmenu1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // HEADER
@@ -236,6 +247,7 @@ $Header_Map = array(
       "orders"      => MODULES_PATH . "header/header1.inc",
       "admin"       => MODULES_PATH . "admin/header/header1.inc",
       "adminpopup"  => MODULES_PATH . "admin/header/header1.inc",
+      "test"        => MODULES_PATH . "test/menu/header1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // FOOTER
@@ -253,6 +265,7 @@ $Footer_Map = array(
       "orders"      => MODULES_PATH . "footer/footer1.inc",
       "admin"       => MODULES_PATH . "admin/footer/footer1.inc",
       "adminpopup"  => MODULES_PATH . "admin/footer/footer1.inc",
+      "test"        => MODULES_PATH . "test/menu/footer1.inc",
 );
 // ---------------------------------------------------------------------------------------------- //
 // TITLE
@@ -261,5 +274,6 @@ $Title_Map = array(
       "default"     => "MEOKITTY",
       "admin"       => "MEOKITTY - Quan Tri",
       "adminpopup"  => "MEOKITTY - Quan Tri",
+      "test"        => "MEOKITTY - Test",
 );
 ?>

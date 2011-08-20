@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $product_price       = $_POST['txtProductPrice'];
   $product_name        = $_POST['txtProductName'];
   $product_description = $_POST['txtProductDescription'];
-  $product_quantity    = $_POST['txtProductQuantity'];
+  // $product_quantity = $_POST['txtProductQuantity'];
+  $product_image       = $_POST['txtProductImage'];
 
   if(empty($product_name)) $errors[] = 'Vui lòng nhập tên sản phẩm';
   if(empty($product_price)) $errors[] = 'Vui lòng nhập giá sản phẩm';
@@ -29,16 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $errors[] = 'Số lượng sản phẩm không hợp lệ';
 
   if(count($errors) <= 0){
-    $basefilename = basename($_FILES['txtProductImage']['name']);
-    $upload_dir = SYS_IMAGES_PATH . $basefilename;
-    if(!empty($basefilename)){
-      move_uploaded_file($_FILES['txtProductImage']['tmp_name'], $upload_dir);
-    }
-
     $product_id = DB_Insert('products',array(
-      'products_quantity'    => $product_quantity,
+      // 'products_quantity'    => $product_quantity,
       'products_price'       => $product_price,
-      'products_image'       => $basefilename,
+      'products_image'       => $product_image,
       'products_date_added'  => date('Y-m-d H:i:s'),
     ));
     if(!empty($product_id)){

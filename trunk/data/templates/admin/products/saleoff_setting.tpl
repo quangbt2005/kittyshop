@@ -44,7 +44,7 @@
 {if $update_saleoff_ok==1}
 window.opener.reloadProductList({$product.categories_id});
 alert('Đã lưu thay đổi');
-// window.close();
+window.close();
 {/if}
 {literal}
 function SetVisibility(checked){
