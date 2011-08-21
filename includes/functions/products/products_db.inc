@@ -288,6 +288,7 @@ function LoadRandom1SaleOffProducts()
            . ' s ON (p.products_id=s.products_id), '
            . TBL_PRO_DES . ' pd'
            . ' WHERE p.products_id=pd.products_id AND pd.language_id=' . LANGUAGE_ID
+           . ' AND s.status=1'
            . ' LIMIT ' . rand(0,$saleoff_count-1) . ',1';
   $Result = P_MySQL_Real_SELECT_GetArrayIndex( $query );
 
@@ -300,7 +301,7 @@ function LoadRandom1SaleOffProducts()
 // ---------------------------------------------------------------------------------------------- //
 function CountSaleOffProducts()
 {
-  $query = 'SELECT COUNT(1) FROM ' . TBL_SALEOFF;
+  $query = 'SELECT COUNT(1) FROM ' . TBL_SALEOFF . ' WHERE status=1';
   $saleoff_count = P_MySQL_Real_SELECT( $query ) ;
   $saleoff_count = $saleoff_count[0];
 
@@ -317,6 +318,7 @@ function LoadSaleOffProducts( $offset=0, $limit=DEFAULT_PAGER_LIMIT )
            . ' s ON (p.products_id=s.products_id), '
            . TBL_PRO_DES . ' pd'
            . ' WHERE p.products_id=pd.products_id AND pd.language_id=' . LANGUAGE_ID
+           . ' AND s.status=1'
            . ' LIMIT ' . $offset . ',' . $limit;
 
   $Result = P_MySQL_Real_SELECT_GetArrayIndex( $query );
