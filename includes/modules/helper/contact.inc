@@ -28,7 +28,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   {
     $subject = 'Thông tin liên hệ từ [' . $email . ']';
     $content = htmlentities($content);
-    mailSMTP('Belamdep Webmaster', $email, ADMIN_EMAIL, NULL, NULL, $subject, $content);
+    mailSMTP('MEOKITTY.COM Webmaster', $email, ADMIN_EMAIL, NULL, NULL, $subject, $content);
 
     header('Location: /lienhe/thanhcong');
     exit;

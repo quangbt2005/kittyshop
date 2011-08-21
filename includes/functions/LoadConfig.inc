@@ -1,8 +1,7 @@
 <?php
 $configkey = array(
   "'EMAIL'",
-  "'STORE_ADDRESS'",
-  "'STORE_EMAIL'",
+  "'STORE_INFO'",
   "'PHONE'",
   "'CHAT'",
   "'CHATTITLE'",

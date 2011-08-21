@@ -82,4 +82,10 @@ define( 'YM_USER',            'belamdep' );
 define( 'YM_USER_PASS',       'simple303' );
 define( 'YM_CONSUMER_KEY',    'dj0yJmk9NmE3OVIwYmQyU2dZJmQ9WVdrOWRHdFVZV2hITnpBbWNHbzlNVEUyTXpFMU9USTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yNg--' );
 define( 'YM_CONSUMER_SECRET', '3a0f3ac40cfea6ca52841d707565a48e6318aa51' );
+// ---------------------------------------------------------------------------------------------- //
+// SMTP ACCOUNT
+// ---------------------------------------------------------------------------------------------- //
+define( 'SMTP_HOST',          'server-112-78-8-153.domainhostingvn.com' );
+define( 'SMTP_USER',          'admin@meokitty.com' );
+define( 'SMTP_PASS',          'b7DVMElU' );
 ?>

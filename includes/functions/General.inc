@@ -524,10 +524,10 @@ function mailSMTP($from_name,$from,$to,$cc,$bcc,$subject,$message)
     $mail = new PHPMailer();
 
     $mail->IsSMTP();                                    // send via SMTP
-    $mail->Host     = "server10.hostno1.vn";            // SMTP servers
+    $mail->Host     = "server-112-78-8-153.domainhostingvn.com";            // SMTP servers
     $mail->SMTPAuth = true;                             // turn on SMTP authentication
-    $mail->Username = 'admin@belamdep.com';             // SMTP username
-    $mail->Password = 'mi@1lau';                        // SMTP password
+    $mail->Username = 'admin@meokitty.com';          // SMTP username
+    $mail->Password = 'b7DVMElU';                        // SMTP password
 
     $mail->From     = $from;
     $mail->FromName = $from_name;

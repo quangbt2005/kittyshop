@@ -80,7 +80,7 @@ function DefineAjaxRequest(&$Request)
 {
   global $Ajax_Map;
   $Request['is_ajax'] = FALSE;
-  if(in_array($Request['response_page'], $Ajax_Map[$Request['response_module']]))
+  if(@in_array($Request['response_page'], $Ajax_Map[$Request['response_module']]))
   {
     $Request['is_ajax'] = TRUE;
   }
