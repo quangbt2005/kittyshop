@@ -41,8 +41,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	);
   }
 
+  $buyingHelp = $_POST['txtBuyingHelp'];
+  if(get_magic_quotes_gpc() == 1) $buyingHelp = stripslashes($buyingHelp);
   DB_Update('configuration', array('configuration_key' => 'BUYINGHELP'),
-                             array('configuration_value' => ($_POST['txtBuyingHelp'])));
+                             array('configuration_value' => $buyingHelp));
 
   $_SESSION['flash']['update_configuration_ok'] = '1';
   header("Location: /admin/shop/config/" . $category_id);

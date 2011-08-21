@@ -26,9 +26,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   if(count($errs)<=0)
   {
-    $subject = 'Thông tin liên hệ từ [' . $email . ']';
+    $subject = 'Thông tin liên hệ từ ' . $name . '[' . $email . ']';
     $content = htmlentities($content);
-    mailSMTP('MEOKITTY.COM Webmaster', $email, ADMIN_EMAIL, NULL, NULL, $subject, $content);
+    mailSMTP(STORE_NAME . ' Webmaster', ADMIN_EMAIL, ADMIN_EMAIL, NULL, NULL, $subject, $content);
 
     header('Location: /lienhe/thanhcong');
     exit;
