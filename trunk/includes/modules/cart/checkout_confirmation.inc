@@ -6,7 +6,7 @@ require_once( FUNCTIONS_PATH . "DB.inc" );
 require_once( LIB_PATH . "PaymentGates/baokim/BaoKimPayment.php" );
 require_once( LIB_PATH . "PaymentGates/nganluong/nganluong.php" );
 
-define('EMAIL_TEXT_SUBJECT', 'Đơn hàng tại BELAMDEP.COM');
+define('EMAIL_TEXT_SUBJECT', 'Đơn hàng tại ' . STORE_NAME);
 define('EMAIL_TEXT_ORDER_TEXT', "Xin chào bạn.<br>Cảm ơn bạn đã xem và đặt hàng tại website của chúng tôi.<br><b><h1>Chi tiết đơn hàng:</h1></b>");
 define('EMAIL_TEXT_DATE_ORDERED', "<span style=\"color:blue;\">Ngày đặt hàng: %s</span><br>");
 define('EMAIL_TEXT_TOTAL', "<span style=\"color:red;\"><h2>Tổng cộng: %s VND</h2></span><br>");
@@ -16,8 +16,8 @@ define('EMAIL_TEXT_PAYMENT_METHOD', "<span style=\"color:blue;\">Phương thức
 define('EMAIL_TEXT_NGUOI_THANH_TOAN', "<span style=\"color:blue;\">Người thanh toán: </span><b style=\"color:red\">%s</b><br>");
 define('EMAIL_TEXT_NOTE', "<span style=\"color:blue;\">Ghi chú khác: %s</span><br>");
 define('EMAIL_TEXT_SUCCESS', '<br>Đơn hàng của bạn đã được chúng tôi ghi nhận. Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất có thể để thảo luận về việc giao/nhận hàng.<br>');
-define('EMAIL_TEXT_ORDER_VIEW', '<br>Bất kỳ lúc nào bạn cũng có thể xem lại đơn hàng trên website của chúng tôi tại <a href="http://belamdep.com/donhang/%s" style="color:blue" target="blank">đây</a>.<br>');
-define('EMAIL_TEXT_CONTACT', '<br>BELAMDEP.COM<br>' . STORE_ADDRESS . '<br>MB: ' . STORE_PHONE_1 . '<br>Email: ' . STORE_EMAIL_1);
+define('EMAIL_TEXT_ORDER_VIEW', '<br>Bất kỳ lúc nào bạn cũng có thể xem lại đơn hàng trên website của chúng tôi tại <a href="' . STORE_WEBSITE . '/donhang/%s" style="color:blue" target="blank">đây</a>.<br>');
+@define('EMAIL_TEXT_CONTACT', '<br>' . STORE_NAME . '<br>' . STORE_ADDRESS . '<br>MB: ' . PHONE_1 . '<br>Email: ' . STORE_EMAIL);
 define('DATE_FORMAT_LONG', '%A %d %B, %Y');
 // ---------------------------------------------------------------------------------------------- //
 //
@@ -103,18 +103,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email_order .= sprintf(EMAIL_TEXT_ORDER_VIEW, $hash);
     $email_order .= EMAIL_TEXT_CONTACT;
 
-    mailSMTP('BELAMDEP.COM', 'admin@belamdep.com', $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ BELAMDEP.COM', $email_order);
-    /*if($_SESSION['checkout']['note'] != '[TESTBLD]'){
-      sendYM(array('quangbt2005','thuynguyenc2','labay11180'), sprintf('[Thông báo tự động]Có đơn hàng BELAMDEP.COM của khách hàng %s, SĐT: %s', $_SESSION['checkout']['name'], $_SESSION['checkout']['phone']));
-    } else {
-      sendYM(array('quangbt2005','quangbt2005','quangbt2005'), sprintf('[Thông báo tự động]Có đơn hàng BELAMDEP.COM của khách hàng %s, SĐT: %s', $_SESSION['checkout']['name'], $_SESSION['checkout']['phone']));
-    }*/
+    mailSMTP('MEOKITTY.COM', ADMIN_EMAIL, $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ ' . STORE_NAME, $email_order);
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();
-    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ BELAMDEP.COM', 'http://belamdep.com/thanhtoan/bk/hoantat/' . $hash, '', '');
+    $baokim = $bk_payment->createRequestUrl(date('His'), 'quangbt2005@gmail.com', $_SESSION['cart']['total_price'], 0, 0, 'Thanh toán đơn hàng từ ' . STORE_NAME, 'http://meokitty.com/thanhtoan/bk/hoantat/' . $hash, '', '');
     $nl_payment = new NL_Checkout();
-    $nganluong = $nl_payment->buildCheckoutUrl('http://belamdep.com/thanhtoan/nl/hoantat/' . $hash, 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ BELAMDEP.COM', date('His'), $_SESSION['cart']['total_price']);
+    $nganluong = $nl_payment->buildCheckoutUrl('http://meokitty.com/thanhtoan/nl/hoantat/' . $hash, 'quangbt2005@gmail.com', 'Thanh toán đơn hàng từ' . STORE_NAME, date('His'), $_SESSION['cart']['total_price']);
 
     if($payment_method == 'Cổng thanh toán Bảo Kim'){
       header('Location: ' . $baokim);
