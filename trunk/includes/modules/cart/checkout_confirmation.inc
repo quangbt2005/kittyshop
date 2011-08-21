@@ -104,6 +104,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $email_order .= EMAIL_TEXT_CONTACT;
 
     mailSMTP('MEOKITTY.COM', ADMIN_EMAIL, $_SESSION['checkout']['email'], NULL, NULL, 'Đơn hàng từ ' . STORE_NAME, $email_order);
+    mailSMTP('MEOKITTY.COM', ADMIN_EMAIL, ADMIN_EMAIL, NULL, NULL, 'Đơn hàng từ ' . STORE_NAME, $email_order);
 
     $payment_method = $_SESSION['checkout']['method'];
     $bk_payment = new BaoKimPayment();
