@@ -57,7 +57,8 @@ $(document).ready(function() {
             		</td>
             		<td style="border:0px" width="100%">
             			<img id="imgProductImg" src="/images/transparent.png" height="80" width="80" border="0">
-            			<input type="hidden" id="txtProductImage" name="txtProductImage" value="">
+            			<input type="hidden" id="txtProductImage" name="txtProductImage" value=""><br />
+            			<span id="imgURL">{if $txtProductImage != ''}{$PRODUCTS_IMAGES}{$txtProductImage}{/if}</span>
             		</td>
             	</tr>
             </table>
@@ -91,6 +92,9 @@ function createUploader(){
     	if(responseJSON.error == null){
 			$('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
 			$('#txtProductImage').val(fileName);
+{/literal}
+			$('#imgURL').attr("innerText","{$PRODUCTS_IMAGES}" + fileName);
+{literal}
     	}
     }
   });
