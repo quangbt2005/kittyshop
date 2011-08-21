@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         'customers_firstname'     =>  $firstName,
         'customers_lastname'      =>  $lastName,
         'customers_dob'           =>  ($date_parts[2] . str_pad($date_parts[1],2,'0',STR_PAD_LEFT) . str_pad($date_parts[0],2,'0',STR_PAD_LEFT)),
-        'customers_email_address' =>  $phone,
+        'customers_email_address' =>  $email,
         'customers_telephone'     =>  $phone,
         'customers_password'      =>  encrypt_password($password),));
     DB_Insert(TBL_ADDRESS, array(
