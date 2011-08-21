@@ -85,6 +85,20 @@ $(document).ready(function() {
           </td>
         </tr>
         <tr>
+          <th valign="top" align="right" style="padding-right: 5px">Marquee</th>
+          <td colspan="3">
+            <textarea name="txtTopMarquee" rows="2" class="tinymce" style="width: 560px;">{$TOP_MARQUEE}</textarea>
+          </td>
+        </tr>
+        <tr>
+          <th align="right" style="padding-right: 5px">Nick YM nhận thông báo đơn hàng</th>
+          <td colspan="3">
+          	<input type="text" name="txtYMReceiver" class="w500" value="{$YM_RECEIVER}">
+          	<br /><span class="f8 fore-red">Các nick cách nhau bằng dấu <b>;</b></span>
+          </td>
+        </tr>
+
+        <tr>
           <td colspan="4" align="center"><br><input type="submit" value="Lưu thay đổi" class="w100"></td>
         </tr>
       </table>

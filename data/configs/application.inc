@@ -78,8 +78,8 @@ define( 'HEADING_NEWS_IMAGE_HEIGHT', '100' );
 // ---------------------------------------------------------------------------------------------- //
 // YM NOTIFIER CONFIG
 // ---------------------------------------------------------------------------------------------- //
-define( 'YM_USER',            'belamdep' );
-define( 'YM_USER_PASS',       'simple303' );
+define( 'YM_USER',            'meokittyshop' );
+define( 'YM_USER_PASS',       'b7DVMElU' );
 define( 'YM_CONSUMER_KEY',    'dj0yJmk9NmE3OVIwYmQyU2dZJmQ9WVdrOWRHdFVZV2hITnpBbWNHbzlNVEUyTXpFMU9USTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD0yNg--' );
 define( 'YM_CONSUMER_SECRET', '3a0f3ac40cfea6ca52841d707565a48e6318aa51' );
 // ---------------------------------------------------------------------------------------------- //

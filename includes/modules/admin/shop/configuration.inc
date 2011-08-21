@@ -46,6 +46,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   DB_Update('configuration', array('configuration_key' => 'BUYINGHELP'),
                              array('configuration_value' => $buyingHelp));
 
+  DB_Update('configuration', array('configuration_key' => 'YM_RECEIVER'),
+                             array('configuration_value' => $_POST['txtYMReceiver']));
+
+  $topMarquee = $_POST['txtTopMarquee'];
+  if(get_magic_quotes_gpc() == 1) $topMarquee = stripslashes($topMarquee);
+  DB_Update('configuration', array('configuration_key' => 'TOP_MARQUEE'),
+                             array('configuration_value' => $topMarquee));
+
   $_SESSION['flash']['update_configuration_ok'] = '1';
   header("Location: /admin/shop/config/" . $category_id);
 } else {

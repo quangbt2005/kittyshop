@@ -30,3 +30,6 @@
 <div class="seperator"></div>
 <div class="container t-right"><p><input type="image" src="{$IMAGES_LANG_PATH}{$LANGUAGE}/buttons/button_continue.gif"></p></div>
 </form>
+<table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding: 10 0 10 0">
+<tr><td align="center"><img src="/images/kitty_map.gif"></td></tr>
+</table>
