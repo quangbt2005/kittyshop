@@ -11,6 +11,9 @@ $smarty->assign( 'PART_ROW_ITEM', PART_ROW_ITEM );
 $smarty->assign( 'PART_ITEM_LIMIT', PART_ITEM_LIMIT );
 $smarty->assign( 'SMALL_IMAGE_HEIGHT', SMALL_IMAGE_HEIGHT );
 $smarty->assign( 'HEADING_NEWS_IMAGE_WIDTH', HEADING_NEWS_IMAGE_WIDTH );
+$smarty->assign( 'SYS_PRODUCTS_IMAGES', SYS_PRODUCTS_IMAGES );
+$smarty->assign( 'SYS_IMAGES_PATH', SYS_IMAGES_PATH );
+$smarty->assign( 'PRODUCTS_IMAGES', PRODUCTS_IMAGES );
 
 $smarty->register_function('number_format', 'smarty_number_format');
 $smarty->register_function('CategoryName',  'smarty_category_name');

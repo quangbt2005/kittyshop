@@ -27,6 +27,7 @@ define( 'MODULES_PATH',               INCLUDES_PATH . 'modules/' );
 
 define( 'LAYOUT_PATH',                INCLUDES_PATH . 'layout/' );
 define( 'IMAGES_PATH',                WEB_ROOT . 'images/' );
+define( 'PRODUCTS_IMAGES',            IMAGES_PATH . 'products/' );
 define( 'IMAGES_LANG_PATH',           WEB_ROOT . 'images/languages/' );
 define( 'JSCRIPTS_PATH',              WEB_ROOT . 'javascripts/' );
 define( 'STYLES_PATH',                WEB_ROOT . 'styles/' );
