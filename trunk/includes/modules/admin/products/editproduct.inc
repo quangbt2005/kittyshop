@@ -25,6 +25,10 @@ if(!empty($product)){
     //$product_quantity    = $_POST['txtProductQuantity'];
     $product_image       = $_POST['txtProductImage'];
 
+    // ------------------------------------------------------------------------------------------ //
+    if(get_magic_quotes_gpc() == 1) $product_description = stripslashes($product_description);
+    // ------------------------------------------------------------------------------------------ //
+
     if(empty($product_name)) $errors[] = 'Vui lòng nhập tên sản phẩm';
     if(empty($product_price)) $errors[] = 'Vui lòng nhập giá sản phẩm';
     else if(!Positive_Int_Check($product_price))
