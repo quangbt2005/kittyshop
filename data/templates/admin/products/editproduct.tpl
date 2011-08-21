@@ -72,7 +72,7 @@ $(document).ready(function() {
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" rows="25" class="tinymce" style="width: 100%;">{$txtProductDescription}</textarea></td>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" rows="20" class="tinymce" style="width: 100%;">{$txtProductDescription}</textarea></td>
         </tr>
       </table><br />
       <input type="submit" class="w130" value="Save and Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
