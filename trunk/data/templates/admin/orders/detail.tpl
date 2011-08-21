@@ -42,6 +42,12 @@
             <input id="rad2" type="radio" name="orderstatus" value="3"{if $order.orders_status==3} checked="checked"{/if}>&nbsp;<label for="rad2">Đã giao hàng</label>
           </td>
         </tr>
+        <tr>
+          <th align="right" style="padding-right: 5px">YM Notify</th>
+          <td align="left" style="padding-left: 5px" colspan="3">
+            <input id="rad1" type="checkbox" name="ymNotify"{if $order.YM_Notify==1} checked="checked"{/if}>
+          </td>
+        </tr>
       </table><br/>
       <table cellpadding="0" cellspacing="0" width="100%" class="vlist">
         <tr>
@@ -72,5 +78,5 @@
 // window.opener.reloadOrdersList();
 window.opener.location.reload();
 alert('Đã lưu thay đổi');
-// window.close();
+window.close();
 </script>{/if}

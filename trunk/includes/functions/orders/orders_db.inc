@@ -19,7 +19,7 @@ function LoadOrder($order_id)
 	$query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
   $query .= 'o.customers_street_address AS address,o.customers_email_address AS email,';
   $query .= 'o.customers_telephone AS phone,o.payment_method AS method,o.note,o.date_purchased,';
-  $query .= 'o.orders_status AS status,o.hash ';
+  $query .= 'o.orders_status AS status,o.hash,o.YM_Notify ';
   $query .= 'FROM ' . TBL_ORDERS . ' o INNER JOIN ' . TBL_ORDERS_TOTAL . ' ot USING(orders_id) ';
   $query .= 'WHERE o.orders_id=' . $order_id . ' LIMIT 1';
 
@@ -79,4 +79,11 @@ function CountYMPendingOrder()
   return $Result[0];
 }
 // ---------------------------------------------------------------------------------------------- //
+function GetYMReceiver()
+{
+	$query  = "SELECT configuration_value FROM configuration WHERE configuration_key='YM_RECEIVER'";
+  $Result = P_MySQL_Real_SELECT( $query );
+
+  return $Result[0];
+}
 ?>

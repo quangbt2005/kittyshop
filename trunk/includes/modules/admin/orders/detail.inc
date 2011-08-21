@@ -13,9 +13,14 @@ $orderid  = $Request['parameters'][":orderid"];
 $order = LoadOrder($orderid);
 if(!empty($order)){
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $ymNotify = "0";
+    if(isset($_POST['ymNotify']) && $_POST['ymNotify'] == 'on') $ymNotify = "1";
     DB_Update(TBL_ORDERS,
             array('orders_id' => $order['orders_id']),
-            array('orders_status' => $_POST['orderstatus']));
+            array(
+              'orders_status' => $_POST['orderstatus'],
+              'YM_Notify'     => $ymNotify
+            ));
     $order['orders_status'] = $_POST['orderstatus'];
     $smarty->assign( "update_order_ok", 1 );
   }

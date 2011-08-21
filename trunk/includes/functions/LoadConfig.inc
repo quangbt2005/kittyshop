@@ -6,6 +6,8 @@ $configkey = array(
   "'CHAT'",
   "'CHATTITLE'",
   "'BUYINGHELP'",
+  "'YMNOTIFY'",
+  "'MARQUEE'"
 );
 
 $condition = implode(',', $configkey);
@@ -19,4 +21,7 @@ foreach($Result as $value){
 	define($value['configuration_key'], $value['configuration_value']);
   $smarty->assign($value['configuration_key'], $value['configuration_value'] );
 }
+$_topMarquee = substr(TOP_MARQUEE, 3);
+$_topMarquee = substr($_topMarquee, 0, -4);
+$smarty->assign('TOP_MARQUEE', $_topMarquee );
 ?>

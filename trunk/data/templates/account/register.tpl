@@ -20,7 +20,7 @@
   <tr><td>Họ</td><td><input type="text" name="txtFirstName" class="w300" value="{$smarty.post.txtFirstName}"></td></tr>
   <tr><td>Tên</td><td><input type="text" name="txtLastName" class="w300" value="{$smarty.post.txtLastName}">&nbsp;<span class="inputRequirement">*</span></td></tr>
   <tr><td>Ngày sinh</td><td><input type="text" name="txtDOB" class="w300" value="{$smarty.post.txtDOB}"><span class="smallguide">&nbsp;(Ví dụ 24/12/1983)</span></td></tr>
-  <tr><td>Email</td><td><input type="text" name="txtEmail" class="w300" value="{$smarty.post.txtEmail}"></td></tr>
+  <tr><td>Email</td><td><input type="text" name="txtEmail" class="w300" value="{$smarty.post.txtEmail}">&nbsp;<span class="inputRequirement">*</span></td></tr>
   <tr><td>Điện thoại</td><td><input type="text" name="txtPhone" class="w300" value="{$smarty.post.txtPhone}"></td></tr>
 </table><br>
 <div class="w100p t-left">
