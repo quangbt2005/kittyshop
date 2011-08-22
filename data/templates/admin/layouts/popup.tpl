@@ -7,7 +7,7 @@
   <link rel="StyleSheet" href="/style/admin.css" type="text/css" />
   {if $Request.request_page == 'addproduct' || $Request.request_page == 'editproduct'}
   <script type="text/javascript" src="/jscripts/jquery/jquery-1.4.2.js"></script>
-  <script type="text/javascript" src="/jscripts/jquery/tiny_mce/jquery.tinymce.js"></script>
+  <script type="text/javascript" src="/jscripts/fckeditor/ckeditor_basic.js"></script>
   {/if}
   <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
   <title>{$title}</title>
