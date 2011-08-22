@@ -37,8 +37,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   foreach($_POST['txtAccountNo'] as $bankID=>$value){
     DB_Update('bank_account', array('id' => $bankID), array('account_no'   => $value,
-					  										'account_name' => $_POST['txtAccountName'][$bankID])
-	);
+                                'account_name' => $_POST['txtAccountName'][$bankID])
+  );
   }
 
   $buyingHelp = $_POST['txtBuyingHelp'];
@@ -51,6 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $topMarquee = $_POST['txtTopMarquee'];
   if(get_magic_quotes_gpc() == 1) $topMarquee = stripslashes($topMarquee);
+// pd($topMarquee);
   DB_Update('configuration', array('configuration_key' => 'TOP_MARQUEE'),
                              array('configuration_value' => $topMarquee));
 

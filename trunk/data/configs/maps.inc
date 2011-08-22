@@ -61,6 +61,7 @@ $Routes = array(
       "/admin/shop/config"                   => array('module'=>'admin',     'page'=>'shopconfig'),
       "/admin/:filename/uploadproductimage"  => array('module'=>'admin',     'page'=>'uploadproductimage'),
       "/admin/testupload"                    => array('module'=>'test',      'page'=>'testupload'),
+      "/admin/specialcat"                    => array('module'=>'admin',     'page'=>'specialcat'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -135,7 +136,7 @@ $Module_Map = array(
           "getorderslist"    => MODULES_PATH . "admin/orders/getlist.inc",
           "shopconfig"       => MODULES_PATH . "admin/shop/configuration.inc",
           "uploadproductimage" => MODULES_PATH . "admin/products/upload_product_image.inc",
-          "testupload"       => MODULES_PATH . "admin/products/testupload.inc",
+          "specialcat"       => MODULES_PATH . "admin/categories/specialcat.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",

@@ -15,7 +15,9 @@
   <script type='text/javascript' src="/jscripts/jquery/jquery.dynatree.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/ui.draggable.js"></script>
   <script type="text/javascript" src="/jscripts/jquery/ui.droppable.js"></script>
-  <script type="text/javascript" src="/jscripts/jquery/tiny_mce/jquery.tinymce.js"></script>
+  <script type="text/javascript" src="/jscripts/fckeditor/ckeditor_basic.js"></script>
+  <!-- <script type="text/javascript" src="/jscripts/fckeditor/ckeditor.js"></script> -->
+  <!-- <script type="text/javascript" src="/jscripts/fckeditor/adapters/jquery.js"></script> -->
   <script type="text/javascript" src="/jscripts/admin_common.js"></script>
   <link rel="shortcut icon" href="/favico.ico" type="image/x-icon" />
   <title>{$title}</title>
