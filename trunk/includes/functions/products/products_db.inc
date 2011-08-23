@@ -397,7 +397,7 @@ function LoadSearchResultProductID( $keyword_arr, $offset=0, $limit=DEFAULT_PAGE
 function LoadBestSellerProducts($limit=MAX_BEST_SELLER)
 {
   $query  = 'SELECT DISTINCT p.products_id,pd.products_name,products_image FROM ' . TBL_PRODUCTS;
-  $query .= ' p,' . TBL_PRO_DES . ' pd WHERE products_ordered>0 AND p.products_id=pd.products_id ';
+  $query .= ' p,' . TBL_PRO_DES . ' pd WHERE products_ordered>=0 AND p.products_id=pd.products_id ';
   $query .= ' AND pd.language_id=1 ORDER BY products_ordered DESC, products_name limit ' . $limit;
 
   return P_MySQL_Real_SELECT_GetArrayIndex( $query );
