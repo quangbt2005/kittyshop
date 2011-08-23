@@ -228,7 +228,7 @@ function LoadProduct( $product_id )
   $product_id = P_SQL_Quote_NumberOnly( $product_id );
   $query = 'SELECT DISTINCT p.products_id,p.products_image,pd.products_name,p2c.categories_id,'
            . 's.specials_new_products_price special_price,p.products_price,pd.products_description,'
-           . 'p.products_quantity FROM ' . TBL_PRODUCTS . ' p LEFT JOIN ' . TBL_SALEOFF
+           . 'p.products_quantity,p.products_ordered FROM ' . TBL_PRODUCTS . ' p LEFT JOIN ' . TBL_SALEOFF
            . ' s ON (p.products_id=s.products_id AND s.status=1) LEFT JOIN ' . TBL_PRO_DES . ' pd ON ('
            . 'p.products_id=pd.products_id AND pd.language_id=' . LANGUAGE_ID . ') LEFT JOIN '
            . TBL_PRO2CAT . ' p2c ON(p.products_id=p2c.products_id) '
@@ -257,7 +257,7 @@ function LoadProducts( $product_id_array )
   $id_string = implode(',', $product_id_array);
 
   $query = 'SELECT DISTINCT p.products_id,p.products_image,pd.products_name,'
-           . 's.specials_new_products_price special_price,p.products_price '
+           . 's.specials_new_products_price special_price,p.products_price,p.products_ordered '
            . 'FROM ' . TBL_PRODUCTS . ' p LEFT JOIN ' . TBL_SALEOFF
            . ' s ON (p.products_id=s.products_id), '
            . TBL_PRO_DES . ' pd, ' . TBL_PRO2CAT . ' p2c, ' . TBL_CAT

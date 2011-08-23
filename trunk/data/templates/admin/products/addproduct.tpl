@@ -35,9 +35,9 @@
                   <div id="file_uploader" style="float: left"></div>
                 </td>
                 <td style="border:0px" width="100%">
-                  <img id="imgProductImg" src="/images/transparent.png" height="80" width="80" border="0">
+                  <img id="imgProductImg" src="{if $smarty.post.txtProductImage != ''}{$PRODUCTS_IMAGES}{$smarty.post.txtProductImage}{else}/images/transparent.png{/if}" height="80" width="80" border="0">
                   <input type="hidden" id="txtProductImage" name="txtProductImage" value=""><br />
-                  <span id="imgURL">{if $txtProductImage != ''}{$PRODUCTS_IMAGES}{$txtProductImage}{/if}</span>
+                  <span id="imgURL">{if $smarty.post.txtProductImage != ''}{$PRODUCTS_IMAGES}{$smarty.post.txtProductImage}{/if}</span>
                 </td>
               </tr>
             </table>
@@ -45,7 +45,7 @@
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" class="ckeditor">{$smarty.post.txtProductDescription}</textarea></td>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" id="txtProductDescription" class="ckeditor">{$smarty.post.txtProductDescription}</textarea></td>
         </tr>
       </table><br />
       <input type="submit" class="w80" value="Thêm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -65,20 +65,29 @@ function createUploader(){
     element: document.getElementById('file_uploader'),
     action: '/upload_product_image.php',
     debug: true,
-    allowedExtensions: ['jpg','png','gif','bmp'],
+    allowedExtensions: ['jpg','png','gif','bmp','jpeg'],
     sizeLimit: 2097152,
     onComplete: function(id, fileName, responseJSON){
       if(responseJSON.error == null){
-      $('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
-      $('#txtProductImage').val(fileName);
+        $('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
+        $('#txtProductImage').val(fileName);
 {/literal}
-      $('#imgURL').attr("innerHTML","{$PRODUCTS_IMAGES}" + fileName);
+        $('#imgURL').attr("innerHTML","{$PRODUCTS_IMAGES}" + fileName);
 {literal}
+        insertHTMLImg(fileName);
       }
     }
   });
 }
-
+function insertHTMLImg(imgName){
+  var oEditor = CKEDITOR.instances.txtProductDescription;
+  if(oEditor != null){
+    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=500&h=auto&ma=500" border="0">';
+    oEditor.insertHtml( value );
+  } else {
+    alert('Object is NULL');
+  }
+}
 window.onload = createUploader;
 {/literal}
 </script>

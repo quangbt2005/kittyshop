@@ -33,6 +33,10 @@
         </tr>
         {/if}
         <tr>
+          <th align="right" style="padding-right: 5px">Số lượng sản phẩm đã bán</th>
+          <td align="left" style="padding-left: 5px"><input name="txtSoldQuantity" type="text" class="w100 t-right" value="{$txtSoldQuantity}">(10 sản phẩm có số lượng bán lớn nhất sẽ hiển thị trong mục <strong>BÁN CHẠY NHẤT</strong>)</td>
+        </tr>
+        <tr>
           <th align="right" style="padding-right: 5px">Hình Sản Phẩm</th>
           <td align="left">
             <table cellspacing="5" border="0" width="100%">
@@ -72,20 +76,30 @@ function createUploader(){
     element: document.getElementById('file_uploader'),
     action: '/upload_product_image.php',
     debug: true,
-    allowedExtensions: ['jpg','png','gif','bmp'],
+    allowedExtensions: ['jpg','png','gif','bmp','jpeg'],
     sizeLimit: 2097152,
     onComplete: function(id, fileName, responseJSON){
       if(responseJSON.error == null){
-      $('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
-      $('#txtProductImage').val(fileName);
+        $('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
+        $('#txtProductImage').val(fileName);
 {/literal}
-      $('#imgURL').attr("innerHTML","{$PRODUCTS_IMAGES}" + fileName);
+        $('#imgURL').attr("innerHTML","{$PRODUCTS_IMAGES}" + fileName);
 {literal}
+        insertHTMLImg(fileName);
       }
     }
   });
 }
 
+function insertHTMLImg(imgName){
+  var oEditor = CKEDITOR.instances.txtProductDescription;
+  if(oEditor != null){
+    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=500&h=auto&ma=500" border="0">';
+    oEditor.insertHtml( value );
+  } else {
+    alert('Object is NULL');
+  }
+}
 window.onload = createUploader;
 {/literal}
 </script>
