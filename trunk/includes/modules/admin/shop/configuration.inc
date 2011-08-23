@@ -5,6 +5,7 @@
 require_once( FUNCTIONS_PATH . "DB.inc" );
 require_once( FUNCTIONS_PATH . "bankaccounts/bankaccounts_db.inc" );
 // ---------------------------------------------------------------------------------------------- //
+Check_Admin();
 $BankList = ListBankAccountForAdmin();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
