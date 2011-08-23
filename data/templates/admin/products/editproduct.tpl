@@ -101,7 +101,7 @@ function createUploader(){
 function insertHTMLImg(imgName){
   var oEditor = CKEDITOR.instances.txtProductDescription;
   if(oEditor != null){
-    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=500&h=auto&ma=500" border="0">';
+    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=500&h=auto&ma=500" border="0"><br />';
     oEditor.insertHtml( value );
   } else {
     alert('Object is NULL');
