@@ -1,5 +1,12 @@
 {literal}
 <script type="text/javascript" language="javascript">
+$(document).ready(function() {
+  CKEDITOR.replace( 'txtProductDescription',
+    {
+      uiColor : '#9AB8F3',
+      width: 650
+    } );
+});
 </script>
 <script src="/jscripts/fileuploader.js" type="text/javascript"></script>
 {/literal}
@@ -34,7 +41,7 @@
         {/if}
         <tr>
           <th align="right" style="padding-right: 5px">Số lượng sản phẩm đã bán</th>
-          <td align="left" style="padding-left: 5px"><input name="txtSoldQuantity" type="text" class="w100 t-right" value="{$txtSoldQuantity}">(10 sản phẩm có số lượng bán lớn nhất sẽ hiển thị trong mục <strong>BÁN CHẠY NHẤT</strong>)</td>
+          <td align="left" style="padding-left: 5px"><input name="txtSoldQuantity" type="text" class="w100 t-right" value="{$txtSoldQuantity}">&nbsp;(10 sản phẩm có số lượng bán lớn nhất sẽ hiển thị trong mục <strong>BÁN CHẠY NHẤT</strong>)</td>
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px">Hình Sản Phẩm</th>
@@ -55,7 +62,7 @@
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" class="ckeditor">{$txtProductDescription}</textarea></td>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" id="txtProductDescription">{$txtProductDescription}</textarea></td>
         </tr>
       </table><br />
       <input type="submit" class="w130" value="Save and Close">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

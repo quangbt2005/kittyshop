@@ -70,6 +70,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         'final_price'       =>  $product['price'],
         'products_tax'      =>  0,
         'products_quantity' =>  $product['quantity']));
+      DB_Update(TBL_PRODUCTS,
+                array('products_id' => $product['id']),
+                array('products_ordered' => '(products_ordered+' . $product['quantity'] . ')'),
+                true);
     }
 
     // lets start with the email confirmation

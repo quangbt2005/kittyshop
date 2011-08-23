@@ -1,5 +1,12 @@
 {literal}
 <script type="text/javascript" language="javascript">
+$(document).ready(function() {
+  CKEDITOR.replace( 'txtProductDescription',
+    {
+      uiColor : '#9AB8F3',
+      width: 650
+    } );
+});
 </script>
 <script src="/jscripts/fileuploader.js" type="text/javascript"></script>
 {/literal}
@@ -45,7 +52,7 @@
         </tr>
         <tr>
           <th align="right" style="padding-right: 5px" width="120">Chi Tiết Sản Phẩm</th>
-          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" id="txtProductDescription" class="ckeditor">{$smarty.post.txtProductDescription}</textarea></td>
+          <td align="left" style="padding: 5px"><textarea name="txtProductDescription" id="txtProductDescription">{$smarty.post.txtProductDescription}</textarea></td>
         </tr>
       </table><br />
       <input type="submit" class="w80" value="Thêm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

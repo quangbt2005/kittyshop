@@ -23,16 +23,18 @@ function DB_Insert($table, $params){
   return @mysql_insert_id( $P_MySQL_Connect );
 }
 // ---------------------------------------------------------------------------------------------- //
-function DB_Update($table, $conditions, $values){
+function DB_Update($table, $conditions, $values, $valueIsExpression=false){
   if( empty( $values ) || empty( $table ) ){
     return;
   }
 
   $query_values = array();
   $query_conditions = array();
+  $quoteMark = $valueIsExpression ? "" : "'";
 
   foreach($values as $key=>$value){
-    $query_values[] = $key . "='" . P_SQL_Quote($value) . "'";
+    $tmp = sprintf("%s=%s%s%s", $key, $quoteMark, P_SQL_Quote($value), $quoteMark);
+    $query_values[] = $tmp;
   }
   if(!empty($conditions)){
     foreach($conditions as $key=>$value){
