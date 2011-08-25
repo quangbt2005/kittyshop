@@ -44,6 +44,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     header('Location: /taikhoan');
     exit;
   }
+
+  $smarty->assign( "is_post", 'true' );
+  $smarty->assign( "error_count", count($errs) );
+  $smarty->assign( "errs", $errs );
 } else {
   $customer = LoadCustomerById($_SESSION['logon']['id']);
   $smarty->assign('customer', $customer);

@@ -32,6 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   }
   if(strlen($password) <= 0) $errs[] = 'Vui lòng nhập mật khẩu.';
   if($password != $repassword) $errs[] = 'Mật khẩu nhập lại không đúng.';
+  if(strlen($email) <= 0) $errs[] = 'Vui lòng nhập email.';
   if(strlen($email)>0)
     if(!P_Mail_Check($email)) $errs[] = 'Địa chỉ email không hợp lệ.';
 

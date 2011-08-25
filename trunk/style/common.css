@@ -29,7 +29,7 @@ ul.categories li a:hover{color: red;}
 #theme_background{
   width: 1200px;
   background:url("/images/theme_body.png") repeat-x scroll left top #9de7f1;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 #themebottom{
   width: 1200px;
