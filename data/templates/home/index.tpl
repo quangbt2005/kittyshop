@@ -1,25 +1,25 @@
   <div id="start_picture">
     <div id="box_1_1">
     {if $Specs[0] != ''}
-      <a href="/product_thumb.php?f={$Specs[0].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[0].products_id}/chitiet" class="agallery" title="{$Specs[0].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[0].products_price}&nbsp;VND">{ImageThumb src=$Specs[0].products_image width=auto height=64 alt=$Specs[0].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[0].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[0].products_id}/chitiet" class="agallery" title="{$Specs[0].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[0].products_price}&nbsp;VND">{ImageThumb src=$Specs[0].products_image width="auto" height="64" ma="90" alt=$Specs[0].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
     <div id="box_1_2">
     {if $Specs[1] != ''}
-      <a href="/product_thumb.php?f={$Specs[1].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[1].products_id}/chitiet" class="agallery" title="{$Specs[1].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[1].products_price}&nbsp;VND">{ImageThumb src=$Specs[1].products_image width=auto height=64 alt=$Specs[1].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[1].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[1].products_id}/chitiet" class="agallery" title="{$Specs[1].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[1].products_price}&nbsp;VND">{ImageThumb src=$Specs[1].products_image width="auto" height="64" ma="90" alt=$Specs[1].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
     <div id="box_1_3">
     {if $Specs[2] != ''}
-      <a href="/product_thumb.php?f={$Specs[2].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[2].products_id}/chitiet" class="agallery" title="{$Specs[2].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[2].products_price}&nbsp;VND">{ImageThumb src=$Specs[2].products_image width="auto" height="64" alt=$Specs[2].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[2].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[2].products_id}/chitiet" class="agallery" title="{$Specs[2].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[2].products_price}&nbsp;VND">{ImageThumb src=$Specs[2].products_image width="auto" height="64" ma="90" alt=$Specs[2].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
     <div id="box_1_4">
     {if $Specs[3] != ''}
-      <a href="/product_thumb.php?f={$Specs[3].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[3].products_id}/chitiet" class="agallery" title="{$Specs[3].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[3].products_price}&nbsp;VND">{ImageThumb src=$Specs[3].products_image width="auto" height="64" alt=$Specs[3].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[3].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[3].products_id}/chitiet" class="agallery" title="{$Specs[3].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[3].products_price}&nbsp;VND">{ImageThumb src=$Specs[3].products_image width="auto" height="64" ma="90" alt=$Specs[3].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
@@ -32,13 +32,13 @@
 
     <div id="box_3_1">
     {if $Specs[5] != ''}
-      <a href="/product_thumb.php?f={$Specs[5].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[5].products_id}/chitiet" class="agallery" title="{$Specs[5].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[5].products_price}&nbsp;VND">{ImageThumb src=$Specs[5].products_image width="auto" height="64" alt=$Specs[5].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[5].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[5].products_id}/chitiet" class="agallery" title="{$Specs[5].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[5].products_price}&nbsp;VND">{ImageThumb src=$Specs[5].products_image width="auto" height="64" ma="90" alt=$Specs[5].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
     <div id="box_3_2">
     {if $Specs[6] != ''}
-      <a href="/product_thumb.php?f={$Specs[6].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[6].products_id}/chitiet" class="agallery" title="{$Specs[6].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[6].products_price}&nbsp;VND">{ImageThumb src=$Specs[6].products_image width="auto" height="64" alt=$Specs[6].products_name options="hspace=\"5\" vspace=\"5\""}</a>
+      <a href="/product_thumb.php?f={$Specs[6].products_image}&w=auto&h=500&ma=1000" ref="/sanpham/{$Specs[6].products_id}/chitiet" class="agallery" title="{$Specs[6].products_name|upper}&nbsp;&nbsp;{number_format number=$Specs[6].products_price}&nbsp;VND">{ImageThumb src=$Specs[6].products_image width="auto" height="64" ma="90" alt=$Specs[6].products_name options="hspace=\"5\" vspace=\"5\""}</a>
     {/if}
     </div>
 
