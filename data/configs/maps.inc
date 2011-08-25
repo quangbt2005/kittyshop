@@ -39,6 +39,9 @@ $Routes = array(
       "/tintuc/danhmuc/:catid"             => array('module'=>'news',      'page'=>'news_in_cat'),
       "/tintuc/:id/chitiet"                => array('module'=>'news',      'page'=>'news_detail'),
       "/donhang/:hash"                     => array('module'=>'orders',    'page'=>'view'),
+      "/chat"                              => array('module'=>'chat',      'page'=>'view'),
+      "/chat/:page"                        => array('module'=>'chat',      'page'=>'view'),
+      "/chat/send"                         => array('module'=>'chat',      'page'=>'send'),
       // ADMIN ---------------------------------------------------------------------------------- //
       "/admin/login"                         => array('module'=>'admin',     'page'=>'login'),
       "/admin/home"                          => array('module'=>'admin',     'page'=>'home'),
@@ -62,6 +65,7 @@ $Routes = array(
       "/admin/:filename/uploadproductimage"  => array('module'=>'admin',     'page'=>'uploadproductimage'),
       "/admin/testupload"                    => array('module'=>'test',      'page'=>'testupload'),
       "/admin/specialcat"                    => array('module'=>'admin',     'page'=>'specialcat'),
+      "/admin/chat"                          => array('module'=>'admin',     'page'=>'chat'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -137,6 +141,7 @@ $Module_Map = array(
           "shopconfig"       => MODULES_PATH . "admin/shop/configuration.inc",
           "uploadproductimage" => MODULES_PATH . "admin/products/upload_product_image.inc",
           "specialcat"       => MODULES_PATH . "admin/categories/specialcat.inc",
+          "chat"             => MODULES_PATH . "admin/chat/list.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
@@ -146,6 +151,10 @@ $Module_Map = array(
           "orderdetail"      => MODULES_PATH . "admin/orders/detail.inc",
           "saleoffsetting"   => MODULES_PATH . "admin/products/saleoff_setting.inc",
           "iconboard"        => MODULES_PATH . "admin/categories/iconboard.inc",
+      ),
+      "chat"            => array(
+          "view"             => MODULES_PATH . "chat/view.inc",
+          "send"             => MODULES_PATH . "chat/send.inc",
       ),
       "test"            => array(
           "testupload"       => MODULES_PATH . "test/testupload.inc",
