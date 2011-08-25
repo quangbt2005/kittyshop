@@ -84,7 +84,7 @@ function createUploader(){
     action: '/upload_product_image.php',
     debug: true,
     allowedExtensions: ['jpg','png','gif','bmp','jpeg'],
-    sizeLimit: 2097152,
+    sizeLimit: 307200,
     onComplete: function(id, fileName, responseJSON){
       if(responseJSON.error == null){
         $('#imgProductImg').attr("src","/product_thumb.php?f=" + fileName + "&w=auto&h=80&ma=80&cx=84&cy=84");
@@ -101,7 +101,7 @@ function createUploader(){
 function insertHTMLImg(imgName){
   var oEditor = CKEDITOR.instances.txtProductDescription;
   if(oEditor != null){
-    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=500&h=auto&ma=500" border="0"><br />';
+    var value = '<br /><img src="/product_thumb.php?f=' + imgName + '&w=400&h=auto&ma=500" border="0"><br />';
     oEditor.insertHtml( value );
   } else {
     alert('Object is NULL');

@@ -21,15 +21,26 @@
 </head>
 <body>
 <div id="allscreen">
-  <div id="allcontent" style="width: 960px;background-color: white;">
-    <div id="allheader">{$header}</div>
-    <div id="allleft">{$left_col}</div>
-    <div id="allcenter">
-      {$center_col}
+  <div id="theme_background">
+    <div id="theme_right">
+    <div id="body_bottom">
+      <div id="body_top">
+        <div id="body_left">
+          <div id="body_right">
+            <div id="allcontent" style="width: 960px;background-color: white;">
+              <div id="allheader">{$header}</div>
+              <div id="allleft">{$left_col}</div>
+              <div id="allcenter">{$center_col}</div>
+              <div id="allright">{$right_col}</div>
+              <div id="allfooter">{$footer}</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="allright">{$right_col}</div>
-    <div id="allfooter">{$footer}</div>
+    </div>
   </div>
+  <div id="themebottom"></div>
 </div>
 {literal}
 <script type="text/javascript">

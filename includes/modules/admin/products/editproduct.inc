@@ -41,7 +41,7 @@ if(!empty($product)){
 
     if(count($errors) <= 0){
       if(!empty($product_image)){
-        if(!empty($product['products_image'])){
+        if(!empty($product['products_image']) && ($product['products_image'] != $product_image)){
           $oldimage = SYS_PRODUCTS_IMAGES . $product['products_image'];
           unlink($oldimage);
         }

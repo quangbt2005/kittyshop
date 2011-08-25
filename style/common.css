@@ -19,11 +19,46 @@ ul.categories li a
   text-decoration:none;
 }
 ul.categories li a:hover{color: red;}
-
+#allscreen{
+  /*background:url("/images/theme_body.png") repeat-x scroll right top #9de7f1;*/
+}
+#theme_right{
+  width: 1200px;
+  background: url("/images/theme_right.gif") no-repeat scroll right top transparent;
+}
+#theme_background{
+  width: 1200px;
+  background:url("/images/theme_body.png") repeat-x scroll left top #9de7f1;
+  padding-top: 30px;
+}
+#themebottom{
+  width: 1200px;
+  height: 246px;
+  background:url("/images/kittytheme.jpg") no-repeat scroll right top transparent;
+}
+#body_top{
+  width: 978px;
+  background:url("/images/body_top.png") no-repeat scroll left top transparent;
+  padding-top: 9px;
+}
+#body_left{
+  width: 978px;
+  background:url("/images/body_left.png") repeat-y scroll left top transparent;
+}
+#body_right{
+  width: 978px;
+  background:url("/images/body_right.png") repeat-y scroll right top transparent;
+}
+#body_bottom{
+  width: 978px;
+  background:url("/images/body_bottom.png") no-repeat scroll right bottom transparent;
+  padding-bottom: 9px;
+}
+#allcontent{z-index: 10;}
 #allheader{
-	clear: both;
-	width: 960px;
-	background:url("/images/top-m.gif") repeat-x scroll right top transparent;
+  clear: both;
+  width: 960px;
+  /*background:url("/images/top-m.gif") repeat-x scroll right top transparent;*/
 }
 #allleft{float: left;width: 200px;margin: 5 0 5 0;}
 #allcenter{float: left;width:550px;background-color: white;margin: 5 0 5 5;}
@@ -79,10 +114,10 @@ div.fix_height_container
   border-bottom: 1px solid #7DCCFF;*/
 }
 div.saleoffimg{
-	width: 120px;
-	height: 120px;
-	background-color: #ffffff;
-	border: 1px solid #afb51a;
+  width: 120px;
+  height: 120px;
+  background-color: #ffffff;
+  border: 1px solid #afb51a;
 }
 div.container{padding: 0px;background-color: #f8ffd9;border: 1px solid #E9EE88;}
 .product
@@ -138,17 +173,17 @@ a.news2{font:bold 15px/20px Arial;color:red;}
 /* --------------------------------------------------------------------------------------------- */
 .tbl_top_h_l{/*background:url("/images/top-l.jpg") no-repeat scroll left top transparent;*/}
 .tbl_top_h_r{
-	height: 280px;
-	background:url("/images/BANNER_1.jpg") no-repeat scroll left center transparent;
-	vertical-align: bottom;
+  height: 280px;
+  background:url("/images/BANNER_1.jpg") no-repeat scroll left center transparent;
+  vertical-align: bottom;
 }
 .href_h_1,
 .href_h_2,
 .href_h_3,
 .href_h_4,
 .href_h_5{
-	text-decoration: none;
-	margin-right: 10px;
+  text-decoration: none;
+  margin-right: 10px;
 }
 .href_h_1 img{background:url("/images/HEADER_BUTTONS.png") no-repeat scroll 0 0 transparent;}
 .href_h_2 img{background:url("/images/HEADER_BUTTONS.png") no-repeat scroll 0 -46px transparent;}
@@ -196,25 +231,25 @@ td {
 .bsl_left{background: url("/images/k-tl3.gif") no-repeat scroll left top transparent;}
 .bsl_right{background: url("/images/k-tr3.gif") no-repeat scroll right top transparent;}
 .heading_text_1{
-	color: #010101;
+  color: #010101;
     font-size: 12px;
     font-weight: bold;
     padding: 9px 10px 15px 11px;
 }
 .heading_text_2{
-	color: #010101;
+  color: #010101;
     font-size: 12px;
     font-weight: bold;
     padding: 19px 20px 12px;
 }
 .heading_text_3{
-	color: #010101;
+  color: #010101;
     font-size: 14px;
     font-weight: bold;
     padding: 19px 5px 12px;
 }
 .heading_text_4{
-	color: #010101;
+  color: #010101;
     font-size: 12px;
     font-weight: bold;
     padding: 19px 5px 12px;
@@ -238,7 +273,7 @@ td {
 }
 li.bg_list_un{background: none repeat scroll 0 0 transparent;}
 li.bg_list{
-	background: url("/images/li-line.gif") repeat-x scroll 0 0 transparent;
+  background: url("/images/li-line.gif") repeat-x scroll 0 0 transparent;
     margin: 0;
 }
 /* --------------------------------------------------------------------------------------------- */
