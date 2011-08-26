@@ -65,7 +65,10 @@ $Routes = array(
       "/admin/:filename/uploadproductimage"  => array('module'=>'admin',     'page'=>'uploadproductimage'),
       "/admin/testupload"                    => array('module'=>'test',      'page'=>'testupload'),
       "/admin/specialcat"                    => array('module'=>'admin',     'page'=>'specialcat'),
-      "/admin/chat"                          => array('module'=>'admin',     'page'=>'chat'),
+      "/admin/chat"                          => array('module'=>'admin',     'page'=>'chatlist'),
+      "/admin/chat/:chatid/delete"           => array('module'=>'admin',     'page'=>'chatdelete'),
+      "/admin/chat/:chatid/nodisplay"        => array('module'=>'admin',     'page'=>'chatnodisplay'),
+      "/admin/chat/getlist"                  => array('module'=>'admin',     'page'=>'chatgetlist'),
 );
 // ---------------------------------------------------------------------------------------------- //
 // MODULES MAP
@@ -141,7 +144,10 @@ $Module_Map = array(
           "shopconfig"       => MODULES_PATH . "admin/shop/configuration.inc",
           "uploadproductimage" => MODULES_PATH . "admin/products/upload_product_image.inc",
           "specialcat"       => MODULES_PATH . "admin/categories/specialcat.inc",
-          "chat"             => MODULES_PATH . "admin/chat/list.inc",
+          "chatlist"         => MODULES_PATH . "admin/chat/list.inc",
+          "chatdelete"       => MODULES_PATH . "admin/chat/delete.inc",
+          "chatnodisplay"    => MODULES_PATH . "admin/chat/nodisplay.inc",
+          "chatgetlist"      => MODULES_PATH . "admin/chat/getlist.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
@@ -175,7 +181,10 @@ $Ajax_Map = array(
           "ordersdelete",
           "getorderslist",
           "deletecategory",
-          "uploadproductimage"
+          "uploadproductimage",
+          "chatdelete",
+          "chatnodisplay",
+          "chatgetlist"
       )
 );
 // ---------------------------------------------------------------------------------------------- //
