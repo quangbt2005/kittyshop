@@ -61,12 +61,11 @@ class CaptchaSecurityImages {
       return $code;
    }
 
-   function CaptchaSecurityImages($width='120',$height='40',$characters='6')
+   function CaptchaSecurityImages($width='120',$height='40',$characters='6',$font_size=18)
    {
       $code = $this->generateCode($characters);
       /* font size will be 75% of the image height */
       // $font_size = $height * 0.60;
-      $font_size = 18;
       $image = imagecreate($width, $height) or die('Cannot initialize new GD image stream');
       /* set the colours */
       $background_color = imagecolorallocate($image, 255, 255, 255);
@@ -110,7 +109,9 @@ class CaptchaSecurityImages {
 // $height = isset($_GET['height']) && $_GET['height'] < 200 ? $_GET['height'] : '15';
 // $characters = isset($_GET['characters']) && $_GET['characters'] > 2 ? $_GET['characters'] : '6';
 
-
-$captcha = new CaptchaSecurityImages();
-
+if($_GET['name'] != 'chatting'){
+  $captcha = new CaptchaSecurityImages();
+} else {
+  $captcha = new CaptchaSecurityImages(120, 40, 2);
+}
 ?>

@@ -8,7 +8,7 @@ CKEDITOR.editorConfig = function( config )
   // Define changes to default configuration here. For example:
   config.toolbar_Basic =
   [
-    ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink','-','About']
+    ['Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink']
   ];
 
   config.toolbar_Full =
@@ -35,13 +35,21 @@ CKEDITOR.editorConfig = function( config )
     { name: 'row2', items : [ 'Font','FontSize','Link','Unlink','-','Image','Table','Smiley','SpecialChar','TextColor','BGColor','-','Maximize','Source' ] },
   ];
 
+  config.toolbar_Enough4Chat =
+  [
+    { name: 'row1', items : [ 'Cut','Copy','Paste','-','Undo','Redo','-','Bold','Italic','Underline','Strike','Subscript','Superscript','-','NumberedList','BulletedList','-','Outdent','Indent','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ] },
+    '/',
+    { name: 'row2', items : [ 'Link','Unlink','-','SpecialChar','-','TextColor','BGColor' ] },
+  ];
+
   config.language = 'vi';
   config.uiColor = '#AADC6E';
   config.skin = 'kama';
   config.toolbar = 'Enough4Me';
-  config.extraPlugins = 'autogrow',
-  config.autoGrow_maxHeight = 200,
-  config.autoGrow_minHeight = 200,
-  config.removePlugins = 'resize',
+  config.extraPlugins = 'autogrow';
+  config.autoGrow_maxHeight = 200;
+  config.autoGrow_minHeight = 200;
+  config.removePlugins = 'resize';
   config.width = 580;
+  config.autoParagraph = false;
 };

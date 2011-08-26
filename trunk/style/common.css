@@ -331,6 +331,32 @@ table.register td{padding: 5px;text-align: left;}
 .bigtitle{font-family: Arial, sans-serif;font-size: 20px;font-weight: bold;color: #333399;}
 .tumlum1{font:normal 16px/28px Tahoma;color: #000000;}
 /* --------------------------------------------------------------------------------------------- */
+/* TABLE CHAT
+/* --------------------------------------------------------------------------------------------- */
+table.chat, table.chat table{
+  font:normal 12px/18px Tahoma;
+  color: #black;
+}
+table.chat{
+  border: 1px solid #e9ee88;
+  background: none repeat scroll 0 0 #ffffff;
+}
+table.chat table th{
+  padding: 10px 5px 5px;
+  text-align: left;
+  font-weight: bold;
+}
+table.chat table th.chatdate{
+  text-align: right;
+  font-weight: normal;
+}
+table.chat table td{
+  padding: 5px 0 15px 10px;
+  text-align: left;
+  border-bottom: 2px solid #888888;
+  color: #5555ff;
+}
+/* --------------------------------------------------------------------------------------------- */
 /* FONT SIZE
 /* --------------------------------------------------------------------------------------------- */
 .f5{font-size: 5pt !important;}
