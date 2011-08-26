@@ -12,7 +12,10 @@ $List = ListChatForAdmin();
 
 $ListWithIntro = array();
 foreach($List as $chat){
-  $chat['intro'] = strip_tags($chat['content']);
+  $intro = strip_tags($chat['content']);
+  $intro = substr($intro, 0, 150);
+  $intro .= ' ...';
+  $chat['intro'] = $intro;
   $ListWithIntro[] = $chat;
 }
 

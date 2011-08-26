@@ -10,7 +10,7 @@ if(! Check_Admin_Ajax()) exit;
 
 $chatid = $Request['parameters'][':chatid'];
 
-if(!empty($orderid)){
+if(!empty($chatid)){
   $ChatID = explode('_', $chatid);
 
   $query = "UPDATE chat SET isdisplay='0' WHERE id IN(" . implode(',', $ChatID) . ')';
