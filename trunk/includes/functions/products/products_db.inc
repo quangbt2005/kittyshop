@@ -50,7 +50,7 @@ function FindProductsInSpecialCat($limit=8)
 
   foreach($List as $cat_id)
   {
-    $product_count = Count_Products($cat_id[0]);
+    $product_count = Count_Products_Exactly($cat_id[0]);
 
     if(!empty($product_count))
     {
