@@ -53,11 +53,11 @@ function deleteOrders(){
   checkedList = trim(checkedList, '_');
   if(checkedList != ''){
     if(confirm('Bạn có chắc muốn xóa những đơn hàng đã chọn ?')){
-      var url = "/admin/orders/" + checkedList + "/detele";
+      var url = "/admin/orders/" + checkedList + "/delete";
       $.get(url, function(data){
-        update_orders_list();
-    });
-  }
+        reloadOrdersList();
+      });
+    }
   } else {alert('Không có đơn hàng nào được chọn !')}
 }
 function openOrderDetailPopup(order_id){
