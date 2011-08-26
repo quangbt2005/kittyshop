@@ -68,6 +68,7 @@ $Routes = array(
       "/admin/chat"                          => array('module'=>'admin',     'page'=>'chatlist'),
       "/admin/chat/:chatid/delete"           => array('module'=>'admin',     'page'=>'chatdelete'),
       "/admin/chat/:chatid/nodisplay"        => array('module'=>'admin',     'page'=>'chatnodisplay'),
+      "/admin/chat/:chatid/display"          => array('module'=>'admin',     'page'=>'chatdisplay'),
       "/admin/chat/getlist"                  => array('module'=>'admin',     'page'=>'chatgetlist'),
 );
 // ---------------------------------------------------------------------------------------------- //
@@ -148,6 +149,7 @@ $Module_Map = array(
           "chatdelete"       => MODULES_PATH . "admin/chat/delete.inc",
           "chatnodisplay"    => MODULES_PATH . "admin/chat/nodisplay.inc",
           "chatgetlist"      => MODULES_PATH . "admin/chat/getlist.inc",
+          "chatdisplay"      => MODULES_PATH . "admin/chat/display.inc",
       ),
       "adminpopup"      => array(
           "addcategory"      => MODULES_PATH . "admin/categories/addcategory.inc",
@@ -184,7 +186,8 @@ $Ajax_Map = array(
           "uploadproductimage",
           "chatdelete",
           "chatnodisplay",
-          "chatgetlist"
+          "chatgetlist",
+          "chatdisplay"
       )
 );
 // ---------------------------------------------------------------------------------------------- //

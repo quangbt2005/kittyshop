@@ -22,7 +22,6 @@ function ListChatForFrontEnd($offset=0,$limit=DEFAULT_PAGER_LIMIT){
 // ---------------------------------------------------------------------------------------------- //
 function ListChatForAdmin($limit=100){
   $query  = "SELECT * FROM chat ORDER BY createddate DESC LIMIT " . $limit;
-
   return P_MySQL_Real_SELECT_GetArrayIndex($query);
 }
 // ---------------------------------------------------------------------------------------------- //

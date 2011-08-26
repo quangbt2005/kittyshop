@@ -21,6 +21,9 @@
       <a href="/admin/specialcat">Danh mục đặc biệt</a>
     </li>
     <li>
+      <a href="/admin/chat">Chia sẻ KN</a>
+    </li>
+    <li>
       <a href="/admin/shop/config">Cấu hình</a>
     </li>
   </ul>

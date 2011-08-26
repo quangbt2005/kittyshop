@@ -17,5 +17,5 @@
           {/foreach}
         </table><br/>
         <table width="100%" cellpadding="0" cellspacing="0">
-          <tr><td align="right"><input type="button" value="Không hiển thị những dòng đã chọn" onclick="noDisplayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Xoá những dòng đã chọn" onclick="deleteChat()"></td></tr>
+          <tr><td align="right"><input type="button" value="Hiển thị những dòng đã chọn" onclick="displayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Không hiển thị những dòng đã chọn" onclick="noDisplayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Xoá những dòng đã chọn" onclick="deleteChat()"></td></tr>
         </table>
