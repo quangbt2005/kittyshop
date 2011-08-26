@@ -18,6 +18,11 @@
       return false;
     }
 
+    if ( plainValue.length > 4096 ){
+      alert( 'Nội dung quá dài' );
+      return false;
+    }
+
     return true;
   }
   function getClearText( strSrc ) {
