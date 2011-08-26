@@ -10,7 +10,7 @@ if($Request['is_ajax']==FALSE) {
   // -------------------------------------------------------------------------------------------- //
   if($Request["response_module"] == 'admin'){
     require_once( FUNCTIONS_PATH . "orders/orders_db.inc" );
-  	$pendingOrderCount = CountPendingOrders();
+    $pendingOrderCount = CountPendingOrders();
     $smarty->assign( 'pendingOrderCount', $pendingOrderCount );
   }
   // -------------------------------------------------------------------------------------------- //

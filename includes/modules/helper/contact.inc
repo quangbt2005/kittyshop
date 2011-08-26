@@ -24,6 +24,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(strtolower($code) != strtolower($_SESSION['contact']['seccode']))
       $errs[] = 'Mã an toàn không đúng.';
 
+  unset($_SESSION['contact']['seccode']);
+
   if(count($errs)<=0)
   {
     $subject = 'Thông tin liên hệ từ ' . $name . '[' . $email . ']';

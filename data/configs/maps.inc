@@ -39,9 +39,9 @@ $Routes = array(
       "/tintuc/danhmuc/:catid"             => array('module'=>'news',      'page'=>'news_in_cat'),
       "/tintuc/:id/chitiet"                => array('module'=>'news',      'page'=>'news_detail'),
       "/donhang/:hash"                     => array('module'=>'orders',    'page'=>'view'),
-      "/chat"                              => array('module'=>'chat',      'page'=>'view'),
-      "/chat/:page"                        => array('module'=>'chat',      'page'=>'view'),
-      "/chat/send"                         => array('module'=>'chat',      'page'=>'send'),
+      "/chat"                              => array('module'=>'chat',      'page'=>'list'),
+      "/chat/:page/list"                   => array('module'=>'chat',      'page'=>'list'),
+      "/chat/post/:page"                   => array('module'=>'chat',      'page'=>'post'),
       // ADMIN ---------------------------------------------------------------------------------- //
       "/admin/login"                         => array('module'=>'admin',     'page'=>'login'),
       "/admin/home"                          => array('module'=>'admin',     'page'=>'home'),
@@ -153,8 +153,8 @@ $Module_Map = array(
           "iconboard"        => MODULES_PATH . "admin/categories/iconboard.inc",
       ),
       "chat"            => array(
-          "view"             => MODULES_PATH . "chat/view.inc",
-          "send"             => MODULES_PATH . "chat/send.inc",
+          "list"             => MODULES_PATH . "chat/list.inc",
+          "post"             => MODULES_PATH . "chat/post.inc",
       ),
       "test"            => array(
           "testupload"       => MODULES_PATH . "test/testupload.inc",
