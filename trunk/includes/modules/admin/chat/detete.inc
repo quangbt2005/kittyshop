@@ -1,15 +1,19 @@
 <?php
 /**************************************************************************************************/
-/* Created on June 30, 2010                                                                       */
+/* Created on Dec 4, 2008                                                                         */
 /**************************************************************************************************/
-require_once( FUNCTIONS_PATH . "orders/orders_db.inc" );
-require_once( FUNCTIONS_PATH . "categories/build_tree.inc" );
+require_once( FUNCTIONS_PATH . "DB.inc" );
 // ---------------------------------------------------------------------------------------------- //
 //
 // ---------------------------------------------------------------------------------------------- //
-Check_Admin();
-// pd();
-$Orders = LoadMostRecentOrders(100);
-$smarty->assign('Orders', $Orders);
-$center_col = $smarty->fetch( "admin/orders/list.tpl" );
+if(! Check_Admin_Ajax()) exit;
+
+$chatid = $Request['parameters'][':chatid'];
+
+if(!empty($orderid)){
+  $ChatID = explode('_', $chatid);
+
+  $query = "DELETE FROM chat WHERE id IN(" . implode(',', $ChatID) . ')';
+  P_MySQL_Real_Exec($query);
+}
 ?>

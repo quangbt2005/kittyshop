@@ -7,7 +7,7 @@
             <th>Tình trạng</th>
             <th width="50">Xóa</th>
           </tr>
-          {foreach from=$Orders item=order}
+          {foreach from=$Orders item=order}{if $order.orders_id != ''}
           <tr onMouseOver="this.style.backgroundColor='#71FFB8';" onMouseOut="this.style.backgroundColor='transparent';">
             <td><a href="javascript:openOrderDetailPopup({$order.orders_id});">{$order.customers_name|escape:"html"}</a></td>
             <td align="right">{number_format number=$order.value}&nbsp;VND</td>
@@ -16,7 +16,7 @@
             <td>{$order.orders_status_name}</td>
             <td align="center"><input type="checkbox" value="{$order.orders_id}" onclick="addCheckedList(this.value, this.checked)"></td>
           </tr>
-          {/foreach}
+          {/if}{/foreach}
         </table><br/>
         <table width="100%" cellpadding="0" cellspacing="0">
           <tr><td align="right"><input type="button" class="w100" value="Xóa" onclick="deleteOrders()"></td></tr>

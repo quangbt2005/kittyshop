@@ -4,11 +4,12 @@
 /**************************************************************************************************/
 function LoadMostRecentOrders($limit=10)
 {
-	$query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
+  $query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
   $query .= 'o.customers_street_address as address,';
   $query .= "DATE_FORMAT(o.date_purchased,'%Y-%m-%d') AS date_purchased,os.orders_status_name ";
   $query .= 'FROM ' . TBL_ORDERS . ' o INNER JOIN ' . TBL_ORDERS_TOTAL . ' ot USING(orders_id) ';
-  $query .= 'LEFT JOIN ' . TBL_ORDERS_STATUS . ' os ON(orders_status_id=orders_status)';
+  $query .= 'LEFT JOIN ' . TBL_ORDERS_STATUS . ' os ON(orders_status_id=orders_status) ';
+  $query .= "WHERE o.deleted='0'";
   $query .= 'ORDER BY date_purchased DESC LIMIT ' . $limit;
 
   return P_MySQL_Real_SELECT_GetArrayIndex( $query );
@@ -16,7 +17,7 @@ function LoadMostRecentOrders($limit=10)
 // ---------------------------------------------------------------------------------------------- //
 function LoadOrder($order_id)
 {
-	$query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
+  $query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
   $query .= 'o.customers_street_address AS address,o.customers_email_address AS email,';
   $query .= 'o.customers_telephone AS phone,o.payment_method AS method,o.note,o.date_purchased,';
   $query .= 'o.orders_status AS status,o.hash,o.YM_Notify ';
@@ -48,7 +49,7 @@ function LoadOrderByHash($hash)
   $hash = P_SQL_Quote($hash);
 
   if(!empty($hash)){
-  	$query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
+    $query  = 'SELECT o.orders_id,o.customers_id,o.customers_name,o.orders_status,ot.value,';
     $query .= 'o.customers_street_address AS address,o.customers_email_address AS email,';
     $query .= 'o.customers_telephone AS phone,o.payment_method AS method,o.note,o.date_purchased,';
     $query .= 'o.orders_status AS status ';
@@ -81,7 +82,7 @@ function CountYMPendingOrder()
 // ---------------------------------------------------------------------------------------------- //
 function GetYMReceiver()
 {
-	$query  = "SELECT configuration_value FROM configuration WHERE configuration_key='YM_RECEIVER'";
+  $query  = "SELECT configuration_value FROM configuration WHERE configuration_key='YM_RECEIVER'";
   $Result = P_MySQL_Real_SELECT( $query );
 
   return $Result[0];
