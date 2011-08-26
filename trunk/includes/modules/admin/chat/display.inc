@@ -13,7 +13,7 @@ $chatid = $Request['parameters'][':chatid'];
 if(!empty($chatid)){
   $ChatID = explode('_', $chatid);
 
-  $query = "DELETE FROM chat WHERE id IN(" . implode(',', $ChatID) . ')';
+  $query = "UPDATE chat SET isdisplay='1' WHERE id IN(" . implode(',', $ChatID) . ')';
   P_MySQL_Real_Exec($query);
 }
 ?>

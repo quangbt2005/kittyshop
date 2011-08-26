@@ -27,7 +27,7 @@
           {/foreach}
         </table><br/>
         <table width="100%" cellpadding="0" cellspacing="0">
-          <tr><td align="right"><input type="button" value="Không hiển thị những dòng đã chọn" onclick="noDisplayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Xoá những dòng đã chọn" onclick="deleteChat()"></td></tr>
+          <tr><td align="right"><input type="button" value="Hiển thị những dòng đã chọn" onclick="displayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Không hiển thị những dòng đã chọn" onclick="noDisplayChat()">&nbsp;&nbsp;&nbsp;<input type="button" value="Xoá những dòng đã chọn" onclick="deleteChat()"></td></tr>
         </table>
       </div>
     </div>
@@ -50,11 +50,11 @@ function deleteChat(){
   checkedList = trim(checkedList, '_');
   if(checkedList != ''){
     if(confirm('Bạn có chắc muốn xóa những dòng đã chọn ?')){
-      var url = "/admin/chat/" + checkedList + "/detele";
+      var url = "/admin/chat/" + checkedList + "/delete";
       $.get(url, function(data){
-        update_chat_list();
-    });
-  }
+        reloadChatList();
+      });
+    }
   } else {alert('Không có dòng nào được chọn !')}
 }
 function noDisplayChat(){
@@ -63,14 +63,26 @@ function noDisplayChat(){
     if(confirm('Bạn có chắc muốn bỏ hiển thị những dòng đã chọn ?')){
       var url = "/admin/chat/" + checkedList + "/nodisplay";
       $.get(url, function(data){
-        update_chat_list();
-    });
-  }
+        reloadChatList();
+      });
+    }
   } else {alert('Không có dòng nào được chọn !')}
 }
-function reloadOrdersList(){
+function displayChat(){
+  checkedList = trim(checkedList, '_');
+  if(checkedList != ''){
+    if(confirm('Bạn có chắc muốn hiển thị những dòng đã chọn ?')){
+      var url = "/admin/chat/" + checkedList + "/display";
+      $.get(url, function(data){
+        reloadChatList();
+      });
+    }
+  } else {alert('Không có dòng nào được chọn !')}
+}
+function reloadChatList(){
   $.get("/admin/chat/getlist", function(data){
     $("#divList").html(data);
+    checkedList = '';
   });
 }
 </script>

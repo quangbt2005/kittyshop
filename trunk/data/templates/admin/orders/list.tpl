@@ -71,6 +71,7 @@ function openOrderDetailPopup(order_id){
 function reloadOrdersList(){
   $.get("/admin/orders/getlist", function(data){
     $("#divList").html(data);
+    checkedList = '';
   });
 }
 </script>

@@ -6,7 +6,7 @@
         <td style="vertical-align: top;height: 47px;padding-left: 30px">
           <a class="href_h_1" href="/home"><img src="/images/transparent.png" border="0" width="136" height="42"></a>
           <a class="href_h_2" href="/tintuc"><img src="/images/transparent.png" border="0" width="136" height="42"></a>
-          <a class="href_h_3" href="#"><img src="/images/transparent.png" border="0" width="156" height="42"></a>
+          <a class="href_h_3" href="/chat"><img src="/images/transparent.png" border="0" width="156" height="42"></a>
           <a class="href_h_4" href="/huongdanmuahang"><img src="/images/transparent.png" border="0" width="170" height="42"></a>
           <a class="href_h_5" href="/lienhe"><img src="/images/transparent.png" border="0" width="136" height="42"></a>
         </td>
