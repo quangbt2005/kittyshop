@@ -56,15 +56,15 @@ function deleteOrders(){
       var url = "/admin/orders/" + checkedList + "/detele";
       $.get(url, function(data){
         update_orders_list();
-	  });
-	}
+    });
+  }
   } else {alert('Không có đơn hàng nào được chọn !')}
 }
 function openOrderDetailPopup(order_id){
   var url = '/admin/orders/' + order_id + '/detail';
 
-  var topPos = 150;
-  var leftPos = 310;
+  var topPos = (getHeight()-popupHeight)/2;
+  var leftPos = (getWidth()-popupWidth)/2;
 
   var popup = window.open(url, 'Chi_tiet_don_hang',"resizable=no,menubar=no,toolbar=no,location=no,width=" + popupWidth + ",height=" + popupHeight + ",left="+leftPos+",top="+topPos);
 }
