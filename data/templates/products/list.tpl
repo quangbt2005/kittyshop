@@ -5,7 +5,7 @@
     <div class="product">
       {if $product.empty != 'true'}
       <div style="height: 155px;padding: 5px">
-        <a href="/sanpham/{$product.products_id}/chitiet">{ImageThumb src=$product.products_image width=auto height=$SMALL_IMAGE_HEIGHT alt=$product.products_name}<br>
+        <a href="/sanpham/{$product.products_id}/chitiet">{ImageThumb src=$product.products_image width=auto height=$SMALL_IMAGE_HEIGHT ma=170 alt=$product.products_name}<br>
         <a href="/sanpham/{$product.products_id}/chitiet">{$product.products_name}</a><br>
       </div>
       {if $product.special_price != ''}<s>{number_format number=$product.products_price}</s>&nbsp;<span class="fore-red">{number_format number=$product.special_price}{else}{number_format number=$product.products_price}{/if}&nbsp;VND</span><br>
