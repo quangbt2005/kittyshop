@@ -6,7 +6,7 @@
   </tr></table></td></tr>
   <tr>
     <td class="v-top" style="padding-top: 20px;" width="80%">{$product.products_description}&nbsp;</td>
-    <td class="v-top t-center" style="padding-top: 20px;">{ImageThumb src=$product.products_image width=auto height=$SMALL_IMAGE_HEIGHT alt=$product.products_name options="float: left"}<br /><br /><a href="/sanpham/{$product.products_id}/order">{ImageButton image="button_buy_now.png" alt="Đặt hàng"}</a><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="f10" style="text-decoration: underline;" href="javascript:history.back();">Trở lại</a></td>
+    <td class="v-top t-center" style="padding-top: 20px;">{ImageThumb src=$product.products_image width=auto height=$SMALL_IMAGE_HEIGHT ma=145 alt=$product.products_name options="float: left"}<br /><br /><a href="/sanpham/{$product.products_id}/order">{ImageButton image="button_buy_now.png" alt="Đặt hàng"}</a><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class="f10" style="text-decoration: underline;" href="javascript:history.back();">Trở lại</a></td>
   </tr>
 </table>
 {else}
